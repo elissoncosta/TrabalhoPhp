@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('../../conexao.php');
 
 $IdCliente = $_POST['ID_CLIENTE'];
 $Valor = $_POST['Valor'];

@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('../../conexao.php');
 
 $Id = $_POST['ID_EDITORA'];
 $RAZAO_SOCIAL = $_POST['RAZAO_SOCIAL'];

@@ -1,10 +1,10 @@
 <?php
-include('conexao.php');
+include('./conexao.php');
 
-$User = $_POST['USER'];
-$Senha = $_POST['SENHA'];
+$user = $_POST['user'];
+$senha = $_POST['senha'];
 
-$sql = "SELECT USER, SENHA FROM USUARIO WHERE USER = '{$User}' AND SENHA = '{$Senha}'";
+$sql = "SELECT * FROM USUARIO WHERE user = '{$user}' AND senha = '{$senha}'";
 
 $query = mysqli_query($conexao, $sql);
 $usuario = mysqli_num_rows($query);

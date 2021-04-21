@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('../../conexao.php');
 
 $Razao_Social = $_POST['RAZAO_SOCIAL'];
 $Telefone = $_POST['TELEFONE'];

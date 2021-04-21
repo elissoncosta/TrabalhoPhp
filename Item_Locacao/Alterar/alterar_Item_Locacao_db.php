@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('../../conexao.php');
 
 $Id = $_POST['ID_ITEM_LOCACAO'];
 $IdLocacao = $_POST['LOCACAO_ID'];

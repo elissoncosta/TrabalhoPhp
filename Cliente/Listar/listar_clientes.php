@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('../../conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -51,7 +51,7 @@ include('conexao.php');
                            CELULAR,
                            SEXO,
                            ENDERECO,
-                           NUMERO_ENDERECO,
+                           NUMERO_ENDERECO
                       FROM CLIENTE";
 
 			$query = mysqli_query($conexao, $sql);
@@ -73,8 +73,8 @@ include('conexao.php');
 						<td><?php echo $item['ENDERECO']; ?></td>
 						<td><?php echo $item['NUMERO_ENDERECO']; ?></td>
 						<td>
-							<a href="../Alterar/alterar_clientes.php?ID_CLIENTE=<?php echo $item['ID_CLIENTE']; ?>">Alterar</a>
-							<a href="../Excluir/excluir_clientes.php?ID_CLIENTE=<?php echo $item['ID_CLIENTE']; ?>">Excluir</a>
+							<a href="../Alterar/alterar_clientes.php?Id=<?php echo $item['ID_CLIENTE']; ?>">Alterar</a>
+							<a href="../Excluir/excluir_clientes.php?Id=<?php echo $item['ID_CLIENTE']; ?>">Excluir</a>
 						</td>
 					</tr>
 			<?php

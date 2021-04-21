@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('../../conexao.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,10 +50,10 @@ include('conexao.php');
                            T.CLASSIFICACAO,
                            T.TIPO,
                            C.DESCRICAO,
-                           E.RAZAO_SOCIAL,
+                           E.RAZAO_SOCIAL
                       FROM TITULOS T
                       JOIN CATEGORIA C ON (C.ID_CATEGORIA = T.CATEGORIA_ID)
-                      JOIN EDITORA E ON (E.ID_EDITORA = E.EDITORA_ID)";
+                      JOIN EDITORA E ON (E.ID_EDITORA = T.EDITORA_ID)";
 
 			$query = mysqli_query($conexao, $sql);
 			if (!$query) {

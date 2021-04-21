@@ -1,5 +1,5 @@
 <?php
-include('conexao.php');
+include('../../conexao.php');
 
 $Nome = $_POST['Nome'];
 $CPF = $_POST['CPF'];
