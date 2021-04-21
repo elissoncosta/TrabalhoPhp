@@ -11,7 +11,7 @@ include('../../conexao.php');
 
 <body>
 	<?php
-	include('../../menu.php');
+	include('./menu.php');
 	?>
 	<?php
 	$ok   = @$_GET['ok'];
