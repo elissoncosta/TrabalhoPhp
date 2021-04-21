@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Excluir Item</title>
+</head>
+
+<body>
+	<?php
+	include('../../menu.php');
+	?>
+	<form action="excluir_Item_Locacao_db.php" method="post">
+		<?php
+		$Id = $_GET['Id'];
+		?>
+		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
+		<p>Deseja excluir o regitro número <?php echo $Id; ?>?</p>
+
+		<button type="submit">Sim</button>
+		<a href="../Listar/listar_Item_Locacao.php"><button type="button">Não</button></a>
+	</form>
+</body>
+
+</html>
