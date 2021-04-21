@@ -11,7 +11,7 @@
 	?>
 	<form action="excluir_clientes_db.php" method="post">
 		<?php
-		$Id = $_GET['Id_Cliente'];
+		$Id = $_GET['Id'];
 		?>
 		<input type="hidden" 
 		       name="Id" 

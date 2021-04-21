@@ -23,15 +23,15 @@ include('../../conexao.php');
 	?>
 	<form action="alterar_clientes_db.php" method="post">
 		<?php
-		$Id = $_GET['ID_CLIENTE'];
+		$Id = $_GET['Id'];
 
-		$sql = "SELECT ID_CLIENTE,
-                       NOME,
-                       CPF,
-                       CELULAR,
-                       SEXO,
-                       ENDERECO,
-                       NUMERO_ENDERECO,
+		$sql = "SELECT ID_CLIENTE AS Id,
+                       nome,
+                       cpf,
+                       celular,
+                       sexo,
+                       endereco,
+                       numero_endereco
                   FROM CLIENTE
                   WHERE ID_CLIENTE = {$Id}";
 
@@ -45,49 +45,49 @@ include('../../conexao.php');
 		       name="codigo" 
 			   id="codigo" 
 			   maxlength="11" 
-			   value="<?php echo $item['ID_CLIENTE']; ?>" disabled="true"><br><br>
+			   value="<?php echo $item['Id']; ?>" disabled="true"><br><br>
 
 		<label for="nome">Nome</label><br>
 		<input type="text" 
 		       name="nome" 
 			   id="nome" 
 			   maxlength="150" 
-			   value="<?php echo $item['NOME']; ?>"><br><br>
+			   value="<?php echo $item['nome']; ?>"><br><br>
 
 		<label for="cpf">CPF</label><br>
 		<input type="text" 
 		       name="cpf" 
 			   id="cpf" 
 			   maxlength="11" 
-			   value="<?php echo $item['CPF']; ?>"><br><br>
+			   value="<?php echo $item['cpf']; ?>"><br><br>
 
 		<label for="celular">Celular</label><br>
 		<input type="text" 
 		       name="celular" 
 			   id="celular" 
 			   maxlength="11" 
-			   value="<?php echo $item['CELULAR']; ?>"><br><br>
+			   value="<?php echo $item['celular']; ?>"><br><br>
 
 		<label for="sexo">Sexo</label><br>
 		<input type="text" 
 		       name="sexo" 
 			   id="sexo" 
 			   maxlength="11" 
-			   value="<?php echo $item['SEXO']; ?>"><br><br>
+			   value="<?php echo $item['sexo']; ?>"><br><br>
 
 		<label for="endereco">Endereço</label><br>
 		<input type="text" 
 		       name="endereco" 
 			   id="endereco" 
 			   maxlength="150" 
-			   value="<?php echo $item['ENDERECO']; ?>"><br><br>
+			   value="<?php echo $item['endereco']; ?>"><br><br>
 
-		<label for="Numero">Número Endereço</label><br>
+		<label for="numero">Número Endereço</label><br>
 		<input type="text" 
-		       name="Numero" 
-			   id="Numero" 
+		       name="numero" 
+			   id="numero" 
 			   maxlength="10" 
-			   value="<?php echo $item['NUMERO_ENDERECO']; ?>"><br><br>
+			   value="<?php echo $item['numero_endereco']; ?>"><br><br>
 
 		<button type="submit">Alterar</button>
 	</form>
