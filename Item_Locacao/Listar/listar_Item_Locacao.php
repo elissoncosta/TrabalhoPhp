@@ -6,7 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Listar Itens</title>
-			<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
 <body>
@@ -44,11 +44,11 @@ include('../../conexao.php');
 		</thead>
 		<tbody>
 			<?php
-			$sql = "SELECT I.ID_ITEM_LOCACAO,
-                           I.SEQUENCE,
-                           L.DATA_LOCACAO,
-                           L.DATA_ENTREGA,
-                           T.TITULO
+			$sql = "SELECT I.ID_ITEM_LOCACAO AS Id,
+                           I.sequence,
+                           L.data_locacao,
+                           L.data_entrega,
+                           T.titulo
                       FROM ITEM_LOCACAO I
                       JOIN LOCACAO L ON (L.ID_LOCACAO = I.LOCACAO_ID)
                       JOIN TITULOS T ON (T.ID_TITULO = I.TITULO_ID)";
@@ -65,14 +65,14 @@ include('../../conexao.php');
 				while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 				?>
 					<tr>
-						<td><?php echo $item['ID_ITEM_LOCACAO']; ?></td>
-						<td><?php echo $item['SEQUENCE']; ?></td>
-						<td><?php echo $item['DATA_LOCACAO']; ?></td>
-						<td><?php echo $item['DATA_ENTREGA']; ?></td>
-						<td><?php echo $item['TITULO']; ?></td>
+						<td><?php echo $item['Id']; ?></td>
+						<td><?php echo $item['sequence']; ?></td>
+						<td><?php echo $item['data_locacao']; ?></td>
+						<td><?php echo $item['data_entrega']; ?></td>
+						<td><?php echo $item['titulo']; ?></td>
 						<td>
-							<a href="../Alterar/?php echo $item['ID_ITEM_LOCACAO']; ?>">Alterar</a>
-							<a href="../Excluir/?php echo $item['ID_ITEM_LOCACAO']; ?>">Excluir</a>
+							<a href="../Alterar/alterar_Item_Locacao.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
+							<a href="../Excluir/excluir_Item_Locacao.php?Id=<?php echo $item['Id']; ?>">Excluir</a>
 						</td>
 					</tr>
 			<?php

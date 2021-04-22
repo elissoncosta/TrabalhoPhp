@@ -1,16 +1,12 @@
 <?php
 include('../../conexao.php');
 
-$Id = $_POST['ID_ITEM_LOCACAO'];
-$IdLocacao = $_POST['LOCACAO_ID'];
-$Sequence = $_POST['SEQUENCE'];
-$IdTitulo = $_POST['TITULO_ID'];
+$Id = $_POST['Id'];
+$sequence = $_POST['sequence'];
 
-$sql = "UPDATE ITEM_LOCACAO 
-           SET LOCACAO_ID = '{$IdLocacao}', 
-		       SEQUENCE = '{$Sequence}', 
-			   TITULO_ID = '{$IdTitulo}' 
-		 WHERE ID_ITEM_LOCACAO = {$Id}";
+$sql = "UPDATE ITEM_LOCACAO L
+           SET L.SEQUENCE = '{$sequence}'
+		 WHERE ID_ITEM_LOCACAO = '{$Id}'";
 
 $query = mysqli_query($conexao, $sql);
 if ($query) {

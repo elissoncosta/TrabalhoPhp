@@ -1,30 +1,30 @@
 <?php
 include('../../conexao.php');
 
-$Id = $_POST['ID_EDITORA'];
-$RAZAO_SOCIAL = $_POST['RAZAO_SOCIAL'];
-$Telefone = $_POST['TELEFONE'];
-$Endereco = $_POST['ENDERECO'];
-$Numero = $_POST['NUMERO_ENDERECO'];
-$Complemento = $_POST['COMPLEMENTO'];
-$CEP = $_POST['CEP'];
-$Email = $_POST['EMAIL'];
+$Id = $_POST['Id'];
+$RazaoSocial = $_POST['RazaoSocial'];
+$Email = $_POST['Email'];
+$Telefone = $_POST['Telefone'];
+$Endereco = $_POST['Endereco'];
+$Numero = $_POST['Numero'];
+$Complemento = $_POST['Complemento'];
+$Cep = $_POST['Cep'];
 
 $sql = "UPDATE EDITORA
-           SET ID_EDITORA ='{$Id}',
-               RAZAO_SOCIAL ='{$RAZAO_SOCIAL}',
+           SET RAZAO_SOCIAL ='{$RazaoSocial}',
                TELEFONE ='{$Telefone}',
                ENDERECO ='{$Endereco}',
                NUMERO_ENDERECO ='{$Numero}',
                COMPLEMENTO ='{$Complemento}',
-               CEP ='{$CEP}',
-               EMAIL ='{$Email}'";
+               CEP ='{$Cep}',
+               EMAIL ='{$Email}'
+         WHERE ID_EDITORA = '{$Id}'";
 
 $query = mysqli_query($conexao, $sql);
 if ($query) {
-	header('Location: ../Listar/listar_Editora.php?ok=3&msg=' . mysqli_insert_id($conexao));
+    header('Location: ../Listar/listar_Editora.php?ok=3&msg=' . mysqli_insert_id($conexao));
 } else {
-	header('Location: alterar_Editora.php?id=' . $Id . '&erro=3&msg=' . mysqli_error($conexao));
+    header('Location: alterar_Editora.php?id=' . $Id . '&erro=3&msg=' . mysqli_error($conexao));
 }
 
 mysqli_close($conexao);

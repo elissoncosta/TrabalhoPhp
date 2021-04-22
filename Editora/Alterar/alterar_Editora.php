@@ -5,8 +5,8 @@ include('../../conexao.php');
 <html lang="pt-br">
 
 <head>
-	<title>Alterar Bônus</title>
-			<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<title>Alterar Editora</title>
+	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
 <body>
@@ -16,48 +16,87 @@ include('../../conexao.php');
 	<?php
 	$erro = @$_GET['erro'];
 	$msg  = @$_GET['msg'];
+
 	if ($erro == 3) {
-		echo "<p class=\"erro\">Bônus não alterado! MySQL erro: {$msg}</p>";
+		echo "<p class=\"erro\">Editora não alterada! MySQL erro: {$msg}</p>";
 	}
 	?>
-	<form action="alterar_cliente_bonus_db.php" method="post">
+	<form action="./alterar_Editora_db.php" method="post">
 		<?php
-		$id = $_GET['id'];
+		$Id = $_GET['Id'];
 
-		$sql = "SELECT * FROM cliente_bonus WHERE id = {$id}";
+		$sql = "SELECT ID_EDITORA AS Id, 
+		               RAZAO_SOCIAL,
+		               TELEFONE,
+		               ENDERECO,
+		               NUMERO_ENDERECO,
+		               COMPLEMENTO,
+		               CEP,
+		               EMAIL 
+                  FROM EDITORA 
+				 WHERE ID_EDITORA = {$Id}";
 
 		$query = mysqli_query($conexao, $sql);
 		$dado = mysqli_fetch_array($query, MYSQLI_ASSOC);
 		?>
-		<input type="hidden" name="id" value="<?php echo $id; ?>">
+		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
 
 		<label for="codigo">Código</label><br>
-		<input type="text" name="codigo" id="codigo" maxlength="11" value="<?php echo $id; ?>" disabled="true"><br><br>
+		<input type="text" 
+			   name="codigo" 
+			   id="codigo" 
+			   maxlength="11" 
+			   value="<?php echo $Id; ?>" 
+			   disabled="true"><br><br>
 
-		<label for="id_cliente">Cliente</label><br>
-		<select name="id_cliente" id="id_cliente">
-			<?php
-			$sql = "SELECT id, nome FROM cliente";
-			$query = mysqli_query($conexao, $sql);
-			while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-			?>
-				<option value="<?php echo $item['id']; ?>" <?php if ($dado['id_cliente'] == $item['id']) { ?>selected="selected" <?php } ?>><?php echo $item['nome']; ?></option>
-			<?php
-			}
-			?>
-		</select><br><br>
+		<label for="RazaoSocial">Razão Social</label><br>
+		<input type="text" 
+		       maxlength="100" 
+		       name="RazaoSocial" 
+		       id="RazaoSocial" 
+		       value="<?php echo $dado['RAZAO_SOCIAL']; ?>"><br><br>
 
-		<label for="data_validade_ini">Data Inicio</label><br>
-		<input type="date" name="data_validade_ini" id="data_validade_ini" value="<?php echo $dado['data_validade_ini']; ?>"><br><br>
+		<label for="Email">EMAIL</label><br>
+		<input type="text" 
+		       maxlength="100" 
+		       name="Email" 
+		       id="Email" 
+		       value="<?php echo $dado['EMAIL']; ?>"><br><br>
 
-		<label for="data_validade_fim">Data Final</label><br>
-		<input type="date" name="data_validade_fim" id="data_validade_fim" value="<?php echo $dado['data_validade_fim']; ?>"><br><br>
+		<label for="Telefone">Telefone</label><br>
+		<input type="text" 
+		       maxlength="15" 
+		       name="Telefone" 
+		       id="Telefone" 
+		       value="<?php echo $dado['TELEFONE']; ?>"><br><br>
 
-		<label for="locacao_gratis">Locação gratis</label><br>
-		<input type="number" name="locacao_gratis" id="locacao_gratis" value="<?php echo $dado['locacao_gratis']; ?>"><br><br>
+		<label for="Endereco">Endereço</label><br>
+		<input type="text" 
+		       maxlength="200" 
+		       name="Endereco" 
+		       id="Endereco" 
+		       value="<?php echo $dado['ENDERECO']; ?>"><br><br>
 
-		<label for="desconto">Desconto</label><br>
-		<input type="text" name="desconto" id="desconto" value="<?php echo $dado['desconto']; ?>"><br><br>
+		<label for="Numero">Número</label><br>
+		<input type="text" 
+		       maxlength="5" 
+		       name="Numero" 
+		       id="Numero" 
+		       value="<?php echo $dado['NUMERO_ENDERECO']; ?>"><br><br>
+
+		<label for="Complemento">Complemento</label><br>
+		<input type="text" 
+		       maxlength="50" 
+		       name="Complemento" 
+		       id="Complemento" 
+		       value="<?php echo $dado['COMPLEMENTO']; ?>"><br><br>
+
+		<label for="Cep">CEP</label><br>
+		<input type="text" 
+		       maxlength="11" 
+		       name="Cep" 
+		       id="Cep" 
+		       value="<?php echo $dado['CEP']; ?>"><br><br>		
 
 		<button type="submit">Alterar</button>
 	</form>

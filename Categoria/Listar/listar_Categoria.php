@@ -41,9 +41,9 @@ include('../../conexao.php');
 		</thead>
 		<tbody>
 			<?php
-			$sql = "SELECT ID_CATEGORIA,
-		                   DESCRICAO,
-		                   CLASSIFICACAO_INDICATIVA 
+			$sql = "SELECT ID_CATEGORIA AS Id,
+		                   descricao,
+		                   classificacao_indicativa 
 	                  FROM CATEGORIA";
 
 			$query = mysqli_query($conexao, $sql);
@@ -57,12 +57,12 @@ include('../../conexao.php');
 				while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 				?>
 					<tr>
-						<td><?php echo $item['ID_CATEGORIA']; ?></td>
-						<td><?php echo $item['DESCRICAO']; ?></td>
-						<td><?php echo $item['CLASSIFICACAO_INDICATIVA']; ?></td>
+						<td><?php echo $item['Id']; ?></td>
+						<td><?php echo $item['descricao']; ?></td>
+						<td><?php echo $item['classificacao_indicativa']; ?></td>
 						<td>
-							<a href="../Alterar/alterar_Categoria.php?Id=<?php echo $item['ID_CATEGORIA']; ?>">Alterar</a>
-							<a href="../Excluir/?php echo $item['ID_CATEGORIA']; ?>">Excluir</a>
+							<a href="../Alterar/alterar_Categoria.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
+							<a href="../Excluir/excluir_Categoria.php?Id=<?php echo $item['Id']; ?>">Excluir</a>
 						</td>
 					</tr>
 			<?php

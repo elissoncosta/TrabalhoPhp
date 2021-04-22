@@ -6,7 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Alterar Locação</title>
-			<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
 <body>
@@ -24,53 +24,60 @@ include('../../conexao.php');
 
 	<form action="alterar_locacoes_db.php" method="post">
 		<?php
-		$id = $_GET['id'];
+		$Id = $_GET['Id'];
 
-		$sql = "SELECT * FROM locacao WHERE id = {$id}";
+		$sql = "SELECT id_locacao AS Id,
+		               valor,
+					   cliente_id AS IdCliente,
+					   data_locacao,
+					   data_entrega
+				  FROM LOCACAO WHERE ID_LOCACAO = {$Id}";
 
 		$query = mysqli_query($conexao, $sql);
 		$dado = mysqli_fetch_array($query, MYSQLI_ASSOC);
 		?>
-		<input type="hidden" name="id" value="<?php echo $id; ?>">
+		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
 
 		<label for="codigo">Código</label><br>
-		<input type="text" name="codigo" id="codigo" maxlength="11" value="<?php echo $id; ?>" disabled="true"><br><br>
+		<input type="text" 
+		       name="codigo" 
+			   id="codigo" 
+			   maxlength="11" value="<?php echo $dado['Id']; ?>" disabled="true"><br><br>
 
-		<label for="id_cliente">Cliente</label><br>
-
-		<select name="id_cliente" id="id_cliente">
+		<label for="IdCliente">Cliente</label><br>
+		<select name="IdCliente" id="IdCliente">
 			<?php
-			$sql = "SELECT id, nome FROM cliente";
+			$sql = "SELECT ID_CLIENTE AS IdCliente, nome FROM CLIENTE";
 			$query = mysqli_query($conexao, $sql);
+
 			while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			?>
-				<option value="<?php echo $item['id']; ?>" <?php if ($dado['id_cliente'] == $item['id']) { ?>selected="selected" <?php } ?>><?php echo $item['nome']; ?></option>
+				<option value="<?php echo $item['IdCliente']; ?>" 
+					<?php if ($dado['IdCliente'] == $item['IdCliente']) 
+					{ ?>selected="selected" <?php } ?>><?php echo $item['nome']; ?>
+				</option>
 			<?php
 			}
 			?>
 		</select><br><br>
 
-		<label for="id_midia">Titulo</label><br>
-		<select name="id_midia" id="id_midia">
-			<?php
-			$sql = "SELECT id, titulo FROM midia";
-			$query = mysqli_query($conexao, $sql);
-			while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-			?>
-				<option value="<?php echo $item['id']; ?>" <?php if ($dado['id_midia'] == $item['id']) { ?>selected="selected" <?php } ?>><?php echo $item['titulo']; ?></option>
-			<?php
-			}
-			?>
-		</select><br><br>
+		<label for="Valor">Valor</label><br>
+		<input type="number" 
+		       name="Valor" 
+			   id="Valor" 
+			   value="<?php echo $dado['valor']; ?>"><br><br>
 
-		<label for="data_coleta">Data Coleta</label><br>
-		<input type="date" name="data_coleta" id="data_coleta" value="<?php echo $dado['data_coleta']; ?>"><br><br>
+		<label for="Locacao">Data Locacao</label><br>
+		<input type="date" 
+		       name="Locacao" 
+			   id="Locacao" 
+			   value="<?php echo $dado['data_locacao']; ?>"><br><br>
 
-		<label for="data_prevista">Data Prevista</label><br>
-		<input type="date" name="data_prevista" id="data_prevista" value="<?php echo $dado['data_prevista']; ?>"><br><br>
-
-		<label for="data_entrega">Data Entrega</label><br>
-		<input type="date" name="data_entrega" id="data_entrega" value="<?php echo $dado['data_entrega']; ?>"><br><br>
+		<label for="Entrega">Data Entrega</label><br>
+		<input type="date" 
+		       name="Entrega" 
+			   id="Entrega" 
+			   value="<?php echo $dado['data_entrega']; ?>"><br><br>
 
 		<button type="submit">Alterar</button>
 	</form>

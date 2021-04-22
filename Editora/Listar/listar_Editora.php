@@ -46,14 +46,14 @@ include('../../conexao.php');
 		</thead>
 		<tbody>
 			<?php
-			$sql = "SELECT ID_EDITORA, 
-                           RAZAO_SOCIAL,
-                           TELEFONE,
-                           ENDERECO,
-                           NUMERO_ENDERECO,
-                           COMPLEMENTO,
-                           CEP,
-                           EMAIL 
+			$sql = "SELECT ID_EDITORA AS Id, 
+                           razao_social,
+                           telefone,
+                           endereco,
+                           numero_endereco,
+                           complemento,
+                           cep,
+                           email 
                       FROM EDITORA";
 
 			$query = mysqli_query($conexao, $sql);
@@ -67,17 +67,17 @@ include('../../conexao.php');
 				while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 				?>
 					<tr>
-						<td><?php echo $item['ID_EDITORA']; ?></td>
-						<td><?php echo $item['RAZAO_SOCIAL']; ?></td>
-						<td><?php echo $item['TELEFONE']; ?></td>
-						<td><?php echo $item['ENDERECO']; ?></td>
-						<td><?php echo $item['NUMERO_ENDERECO']; ?></td>
-						<td><?php echo $item['COMPLEMENTO']; ?></td>
-						<td><?php echo $item['CEP']; ?></td>
-						<td><?php echo $item['EMAIL']; ?></td>
+						<td><?php echo $item['Id']; ?></td>
+						<td><?php echo $item['razao_social']; ?></td>
+						<td><?php echo $item['telefone']; ?></td>
+						<td><?php echo $item['endereco']; ?></td>
+						<td><?php echo $item['numero_endereco']; ?></td>
+						<td><?php echo $item['complemento']; ?></td>
+						<td><?php echo $item['cep']; ?></td>
+						<td><?php echo $item['email']; ?></td>
 						<td>
-							<a href="../Alterar/alterar_cliente_bonus.php?Id=<?php echo $item['ID_EDITORA']; ?>">Alterar</a>
-							<a href="../Excluir/excluir_cliente_bonus.php?Id=<?php echo $item['ID_EDITORA']; ?>">Excluir</a>
+							<a href="../Alterar/alterar_Editora.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
+							<a href="../Excluir/excluir_Editora.php?Id=<?php echo $item['Id']; ?>">Excluir</a>
 						</td>
 					</tr>
 			<?php

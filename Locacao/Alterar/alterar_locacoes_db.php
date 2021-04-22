@@ -1,14 +1,14 @@
 <?php
 include('../../conexao.php');
 
-$Id = $_POST['ID_LOCACAO'];
-$IdCliente = $_POST['ID_CLIENTE'];
+$Id = $_POST['Id'];
+$IdCliente = $_POST['IdCliente'];
 $Valor = $_POST['Valor'];
-$Locacao = $_POST['DATA_LOCACAO'];
-$Entrega = $_POST['DATA_ENTREGA'];
+$Locacao = $_POST['Locacao'];
+$Entrega = $_POST['Entrega'];
 
 $sql = "UPDATE LOCACAO 
-           SET ID_CLIENTE = '{$Id}', 
+           SET CLIENTE_ID = '{$IdCliente}', 
 		       VALOR = '{$Valor}', 
 		       DATA_LOCACAO = '{$Locacao}', 
 		       DATA_ENTREGA = '{$Entrega}' 

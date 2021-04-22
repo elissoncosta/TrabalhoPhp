@@ -6,7 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Alterar Clientes</title>
-			<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
 <body>
@@ -25,27 +25,28 @@ include('../../conexao.php');
 		<?php
 		$Id = $_GET['Id'];
 
-		$sql = "SELECT ID_CLIENTE AS Id,
-                       nome,
-                       cpf,
-                       celular,
-                       sexo,
-                       endereco,
-                       numero_endereco
-                  FROM CLIENTE
-                  WHERE ID_CLIENTE = {$Id}";
+		$sql = "SELECT C.ID_CLIENTE AS Id,
+                       C.nome,
+                       C.cpf,
+                       C.celular,
+                       C.sexo,
+                       C.endereco,
+                       C.numero_endereco
+                  FROM CLIENTE C
+                 WHERE C.ID_CLIENTE = {$Id}";
 
 		$query = mysqli_query($conexao, $sql);
 		$item = mysqli_fetch_array($query, MYSQLI_ASSOC);
 		?>
-		<input type="hidden" name="Id_Cliente" value="<?php echo $Id; ?>">
+		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
 
 		<label for="codigo">Código</label><br>
 		<input type="text" 
 		       name="codigo" 
 			   id="codigo" 
 			   maxlength="11" 
-			   value="<?php echo $item['Id']; ?>" disabled="true"><br><br>
+			   value="<?php echo $item['Id']; ?>" 
+			   disabled="true"><br><br>
 
 		<label for="nome">Nome</label><br>
 		<input type="text" 
@@ -58,14 +59,14 @@ include('../../conexao.php');
 		<input type="text" 
 		       name="cpf" 
 			   id="cpf" 
-			   maxlength="11" 
+			   maxlength="15" 
 			   value="<?php echo $item['cpf']; ?>"><br><br>
 
 		<label for="celular">Celular</label><br>
 		<input type="text" 
 		       name="celular" 
 			   id="celular" 
-			   maxlength="11" 
+			   maxlength="15" 
 			   value="<?php echo $item['celular']; ?>"><br><br>
 
 		<label for="sexo">Sexo</label><br>
@@ -83,7 +84,7 @@ include('../../conexao.php');
 			   value="<?php echo $item['endereco']; ?>"><br><br>
 
 		<label for="numero">Número Endereço</label><br>
-		<input type="text" 
+		<input type="number" 
 		       name="numero" 
 			   id="numero" 
 			   maxlength="10" 

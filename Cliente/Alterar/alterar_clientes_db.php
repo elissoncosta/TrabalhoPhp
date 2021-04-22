@@ -7,9 +7,16 @@ $cpf = $_POST['cpf'];
 $celular = $_POST['celular'];
 $sexo = $_POST['sexo'];
 $endereco = $_POST['endereco'];
-$numero = $_POST['numero_endereco'];
+$numero = $_POST['numero'];
 
-$sql = "UPDATE CLIENTE SET nome = '{$nome}', cpf = '{$cpf}', celular = '{$celular}', sexo = '{$sexo}', endereco = '{$endereco}', numero_endereco = '{$numero}' WHERE id_cliente = '{$id}'";
+$sql = "UPDATE CLIENTE 
+           SET nome = '{$nome}', 
+               cpf = '{$cpf}', 
+               celular = '{$celular}', 
+               sexo = '{$sexo}', 
+               endereco = '{$endereco}', 
+               numero_endereco = '{$numero}' 
+		 WHERE id_cliente = '{$Id}'";
 
 $query = mysqli_query($conexao, $sql);
 if ($query) {

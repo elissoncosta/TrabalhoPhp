@@ -6,7 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Listar Titulos</title>
-			<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
 <body>
@@ -17,6 +17,7 @@ include('../../conexao.php');
 	$ok   = @$_GET['ok'];
 	$erro = @$_GET['erro'];
 	$msg  = @$_GET['msg'];
+
 	if ($ok == 1) {
 		echo "<p class=\"sucesso\">Titulo excluído com sucesso! Titulo código: {$msg}</p>";
 	} else if ($ok == 2) {
@@ -44,13 +45,13 @@ include('../../conexao.php');
 		</thead>
 		<tbody>
 			<?php
-			$sql = "SELECT T.ID_TITULO,
-                           T.TITULO,
-                           T.SINOPSE,
-                           T.CLASSIFICACAO,
-                           T.TIPO,
-                           C.DESCRICAO,
-                           E.RAZAO_SOCIAL
+			$sql = "SELECT T.id_titulo AS Id,
+                           T.titulo,
+                           T.sinopse,
+                           T.classificacao,
+                           T.tipo,
+                           C.descricao,
+                           E.razao_social
                       FROM TITULOS T
                       JOIN CATEGORIA C ON (C.ID_CATEGORIA = T.CATEGORIA_ID)
                       JOIN EDITORA E ON (E.ID_EDITORA = T.EDITORA_ID)";
@@ -66,16 +67,16 @@ include('../../conexao.php');
 				while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 				?>
 					<tr>
-						<td><?php echo $item['ID_TITULO']; ?></td>
-						<td><?php echo $item['TITULO']; ?></td>
-						<td><?php echo $item['SINOPSE']; ?></td>
-						<td><?php echo $item['CLASSIFICACAO']; ?></td>
-						<td><?php echo $item['TIPO']; ?></td>
-						<td><?php echo $item['DESCRICAO']; ?></td>
-						<td><?php echo $item['RAZAO_SOCIAL']; ?></td>
+						<td><?php echo $item['Id']; ?></td>
+						<td><?php echo $item['titulo']; ?></td>
+						<td><?php echo $item['sinopse']; ?></td>
+						<td><?php echo $item['classificacao']; ?></td>
+						<td><?php echo $item['tipo']; ?></td>
+						<td><?php echo $item['descricao']; ?></td>
+						<td><?php echo $item['razao_social']; ?></td>
 						<td>
-							<a href="../Alterar/alterar_Titulos.php?Id=<?php echo $item['ID_TITULO']; ?>">Alterar</a>
-							<a href="../Excluir/excluir_midias.php?Id=<?php echo $item['ID_TITULO']; ?>">Excluir</a>
+							<a href="../Alterar/alterar_Titulos.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
+							<a href="../Excluir/excluir_Titulo.php?Id=<?php echo $item['Id']; ?>">Excluir</a>
 						</td>
 					</tr>
 			<?php

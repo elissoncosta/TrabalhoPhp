@@ -6,7 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Alterar Categoria</title>
-			<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
 <body>
@@ -23,19 +23,18 @@ include('../../conexao.php');
 	?>
 	<form action="alterar_Categoria_db.php" method="post">
 		<?php
-		$Id = $_GET['ID_CATEGORIA'];
+		$Id = $_GET['Id'];
 
-		$sql = "SELECT ID_CATEGORIA,
-		               DESCRICAO,
-		               CLASSIFICACAO_INDICATIVA 
+		$sql = "SELECT ID_CATEGORIA AS Id,
+		               descricao,
+		               classificacao_indicativa 
 				  FROM CATEGORIA WHERE ID_CATEGORIA = {$Id}";
 
 		$query = mysqli_query($conexao, $sql);
 		$dado = mysqli_fetch_array($query, MYSQLI_ASSOC);
 		?>
-		<input type="hidden" 
-		       name="Id" 
-		       value="<?php echo $Id; ?>">
+
+		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
 
 		<input type="text" 
 		       name="Id" 
@@ -49,14 +48,14 @@ include('../../conexao.php');
 		       name="Descricao" 
 			   id="Descricao" 
 			   maxlength="150" 
-			   value="<?php echo $dado['DESCRICAO']; ?>"><br><br>
+			   value="<?php echo $dado['descricao']; ?>"><br><br>
 
 		<label for="Class_Indic">Classificação Indicativa</label><br>
-		<input type="text" 
-		       name="Class_Indic"
+		<input type="number" 
+		       name="Class_Indic" 
 			   id="Class_Indic" 
 			   maxlength="11" 
-			   value="<?php echo $dado['CLASSIFICACAO_INDICATIVA']; ?>"><br><br>
+			   value="<?php echo $dado['classificacao_indicativa']; ?>"><br><br>
 
 		<button type="submit">Alterar</button>
 	</form>
