@@ -22,7 +22,7 @@ include('../../conexao.php');
 	}
 
 	?>
-	<form action="alterar_Item_Locacao_db.php" method="post">
+	<form action="./alterar_Item_Locacao.php" method="post">
 		<?php
 		$Id = $_GET['Id'];
 
@@ -36,18 +36,20 @@ include('../../conexao.php');
                   FROM ITEM_LOCACAO I
 				  JOIN LOCACAO L ON (L.ID_LOCACAO = I.LOCACAO_ID)
                   JOIN TITULOS T ON (T.ID_TITULO = I.TITULO_ID) 
-				 WHERE I.ID_ITEM_LOCACAO = {$Id}";
+				 WHERE I.ID_ITEM_LOCACAO = '{$Id}'";
 
 		$query = mysqli_query($conexao, $sql);
 		$dado = mysqli_fetch_array($query, MYSQLI_ASSOC);
 		?>
+
+		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
 
 		<label for="Id">Código</label><br>
 		<input type="text" 
 		       name="Id" 
 			   id="Id" 
 			   maxlength="11" 
-			   value="<?php echo $dado['id']; ?>" 
+			   value="<?php echo $Id; ?>" 
 			   disabled="true"><br><br>
 		
 		<label for="sequence">Sequencia</label><br>
@@ -57,29 +59,16 @@ include('../../conexao.php');
 			   maxlength="11" 
 			   value="<?php echo $dado['sequence']; ?>"><br><br>
 
-		<label for="Locacao">Data da Locação</label><br>
-		<input type="date" 
-		       name="Locacao" 
-			   id="Locacao" 
-			   value="<?php echo $dado['data_locacao']; ?>" 
-			   disabled="true"><br><br>
-
-		<label for="Entrega">Data Entrega</label><br>
-		<input type="date" 
-		       name="Entrega" 
-			   id="Entrega" 
-			   value="<?php echo $dado['data_entrega']; ?>" 
-			   disabled="true"><br><br>
-		
 		<label for="IdLocacao">Locação</label><br>
 		<select name="IdLocacao" id="IdLocacao">
 			<?php
-				$sql = "SELECT id_locacao as IdLocacao FROM locacao";
+				$sql = "SELECT ID_LOCACAO AS IdLocacao FROM LOCACAO";
 				$query = mysqli_query($conexao, $sql);
+
 				while($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			?>
 				<option value="<?php echo $dado['IdLocacao']; ?>" 
-					<?php if($dado['IdLocacao'] == $item['IdLocacao']) 
+					<?php if ($dado['IdLocacao'] == $item['IdLocacao']) 
 					{ ?>selected="selected"<?php } ?>><?php echo $item['IdLocacao']; ?>
 				</option>
 			<?php
@@ -90,13 +79,13 @@ include('../../conexao.php');
 		<label for="IdTitulo">Titulo</label><br>
 		<select name="IdTitulo" id="IdTitulo">
 			<?php
-				$sql = "SELECT id_titulo as IdTitulo, titulo FROM titulos";
+				$sql = "SELECT ID_TITULO AS IdTitulo, TITULO FROM titulos";
 				$query = mysqli_query($conexao, $sql);
 				while($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			?>
 				<option value="<?php echo $dado['IdTitulo']; ?>" 
 					<?php if($dado['IdTitulo'] == $item['IdTitulo']) 
-					{ ?>selected="selected"<?php } ?>><?php echo $item['titulo']; ?>
+					{ ?>selected="selected"<?php } ?>><?php echo $item['TITULO']; ?>
 				</option>
 			<?php
 				}

@@ -31,7 +31,7 @@ include('../../conexao.php');
 					   cliente_id AS IdCliente,
 					   data_locacao,
 					   data_entrega
-				  FROM LOCACAO WHERE ID_LOCACAO = {$Id}";
+				  FROM LOCACAO WHERE ID_LOCACAO = '{$Id}'";
 
 		$query = mysqli_query($conexao, $sql);
 		$dado = mysqli_fetch_array($query, MYSQLI_ASSOC);
@@ -42,7 +42,8 @@ include('../../conexao.php');
 		<input type="text" 
 		       name="codigo" 
 			   id="codigo" 
-			   maxlength="11" value="<?php echo $dado['Id']; ?>" disabled="true"><br><br>
+			   maxlength="11" value="<?php echo $dado['Id']; ?>" 
+			   disabled="true"><br><br>
 
 		<label for="IdCliente">Cliente</label><br>
 		<select name="IdCliente" id="IdCliente">

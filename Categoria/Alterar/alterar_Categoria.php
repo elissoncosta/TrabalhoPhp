@@ -36,6 +36,7 @@ include('../../conexao.php');
 
 		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
 
+		<label for="Id">Código</label><br>
 		<input type="text" 
 		       name="Id" 
 			   id="Id" 
