@@ -10,14 +10,13 @@
 	include('../../menu.php');
 	?>
 	<form action="excluir_Categoria_db.php" method="post">
-		<?php
-		$Id = $_GET['ID_CATEGORIA'];
+	<?php
+		$Id = $_GET['Id'];
 		?>
 		<input type="hidden" 
-		       name="id" 
-		       value="
-		<?php echo $Id; ?>">
-		
+		       name="Id" 
+			   value="<?php echo $Id; ?>">
+			   
 		<p>Deseja excluir o regitro número <?php echo $Id; ?>?</p>
 
 		<button type="submit">Sim</button>

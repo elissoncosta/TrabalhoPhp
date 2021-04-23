@@ -1,7 +1,7 @@
 <?php
 include('../../conexao.php');
 
-$Id = $_POST['ID_EDITORA'];
+$Id = $_POST['Id'];
 
 $sql = "DELETE FROM EDITORA WHERE ID_EDITORA = {$Id}";
 

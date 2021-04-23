@@ -22,7 +22,7 @@ include('../../conexao.php');
 	}
 
 	?>
-	<form action="./alterar_Item_Locacao.php" method="post">
+	<form action="./alterar_Item_Locacao_db.php" method="post">
 		<?php
 		$Id = $_GET['Id'];
 
@@ -67,9 +67,10 @@ include('../../conexao.php');
 
 				while($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			?>
-				<option value="<?php echo $dado['IdLocacao']; ?>" 
+				<option value="<?php echo $item['IdLocacao']; ?>" 
 					<?php if ($dado['IdLocacao'] == $item['IdLocacao']) 
-					{ ?>selected="selected"<?php } ?>><?php echo $item['IdLocacao']; ?>
+					{ ?>selected="selected"<?php } ?> >
+					<?php echo $item['IdLocacao']; ?>
 				</option>
 			<?php
 				}
@@ -83,7 +84,7 @@ include('../../conexao.php');
 				$query = mysqli_query($conexao, $sql);
 				while($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			?>
-				<option value="<?php echo $dado['IdTitulo']; ?>" 
+				<option value="<?php echo $item['IdTitulo']; ?>" 
 					<?php if($dado['IdTitulo'] == $item['IdTitulo']) 
 					{ ?>selected="selected"<?php } ?>><?php echo $item['TITULO']; ?>
 				</option>

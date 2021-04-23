@@ -6,7 +6,7 @@ $CPF = $_POST['CPF'];
 $Celular = $_POST['Celular'];
 $Sexo = $_POST['Sexo'];
 $Endereco = $_POST['Endereco'];
-$Numero = $_POST['Numero_Endereco'];
+$Numero = $_POST['Numero'];
 
 $sql = "INSERT INTO CLIENTE 
         VALUES (null, '{$Nome}', '{$CPF}', '{$Celular}', '{$Sexo}', '{$Endereco}', '{$Numero}')";

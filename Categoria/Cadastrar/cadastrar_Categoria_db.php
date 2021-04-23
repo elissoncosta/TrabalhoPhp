@@ -1,14 +1,12 @@
 <?php
 include('../../conexao.php');
 
-$Id = $_POST['ID_CATEGORIA'];
-$Descricao = $_POST['DESCRICAO'];
-$Class_Indic = $_POST['CLASSIFICACAO_INDICATIVA'];
+$Id = $_POST['Id'];
+$Descricao = $_POST['Descricao'];
+$Class_Indic = $_POST['Class_Indic'];
 
-$sql = "UPDATE CATEGORIA 
-           SET DESCRICAO = '{$Descricao}', 
-               CLASSIFICACAO_INDICATIVA = '{$Class_Indic}' 
-	     WHERE ID_CATEGORIA = {$Id}";
+$sql = "INSERT INTO CATEGORIA 
+          VALUES(NULL, '{$Descricao}', '{$Class_Indic}')";
 
 $query = mysqli_query($conexao, $sql);
 if ($query) {

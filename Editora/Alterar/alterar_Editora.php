@@ -41,10 +41,10 @@ include('../../conexao.php');
 		?>
 		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
 
-		<label for="codigo">Código</label><br>
+		<label for="Id">Código</label><br>
 		<input type="text" 
-			   name="codigo" 
-			   id="codigo" 
+			   name="Id" 
+			   id="Id" 
 			   maxlength="11" 
 			   value="<?php echo $Id; ?>" 
 			   disabled="true"><br><br>

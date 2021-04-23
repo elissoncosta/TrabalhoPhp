@@ -1,16 +1,16 @@
 <?php
 include('../../conexao.php');
 
-$Razao_Social = $_POST['RAZAO_SOCIAL'];
-$Telefone = $_POST['TELEFONE'];
-$Endereco = $_POST['ENDERECO'];
-$Numero = $_POST['NUMERO_ENDERECO'];
-$Complemento = $_POST['COMPLEMENTO'];
-$Cep = $_POST['CEP'];
-$Email = $_POST['EMAIL'];
+$RazaoSocial = $_POST['RazaoSocial'];
+$Telefone = $_POST['Telefone'];
+$Endereco = $_POST['Endereco'];
+$Numero = $_POST['Numero'];
+$Complemento = $_POST['Complemento'];
+$Email = $_POST['Email'];
+$Cep = $_POST['Cep'];
 
 $sql = "INSERT INTO EDITORA
-	    VALUES(NULL, '{$Razao_Social}', '{$Telefone}', '{$Endereco}', '{$Numero}', '{$Complemento}', '{$Cep}', '{$Email}')";
+	    VALUES(NULL, '{$RazaoSocial}', '{$Telefone}', '{$Endereco}', '{$Numero}', '{$Complemento}', '{$Email}', '{$Cep}')";
 
 $query = mysqli_query($conexao, $sql);
 if ($query) {

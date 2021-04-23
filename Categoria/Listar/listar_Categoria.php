@@ -19,17 +19,17 @@ include('../../conexao.php');
 	$msg  = @$_GET['msg'];
 
 	if ($ok == 1) {
-		echo "<p class=\"sucesso\">Categoria excluído com sucesso! Categoria código: {$msg}</p>";
+		echo "<p class=\"sucesso\">Categoria excluída com sucesso! Categoria código: {$msg}</p>";
 	} else if ($ok == 2) {
-		echo "<p class=\"sucesso\">Categoria cadastrado com sucesso! Categoria código: {$msg}</p>";
+		echo "<p class=\"sucesso\">Categoria cadastrada com sucesso! Categoria código: {$msg}</p>";
 	} else if ($ok == 3) {
-		echo "<p class=\"sucesso\">Categoria alterado com sucesso! Categoria código: {$msg}</p>";
+		echo "<p class=\"sucesso\">Categoria alterada com sucesso! Categoria código: {$msg}</p>";
 	}
 	if ($erro == 1) {
-		echo "<p class=\"erro\">Categoria não excluído! MySQL erro: {$msg}</p>";
+		echo "<p class=\"erro\">Categoria não excluída! MySQL erro: {$msg}</p>";
 	}
 	?>
-	<br><br><a href="cadastrar_Categoria.php">Cadastrar</a><br><br>
+	<br><br><a href="../Cadastrar/cadastrar_Categoria.php">Cadastrar</a><br><br>
 	<table>
 		<thead>
 			<tr>

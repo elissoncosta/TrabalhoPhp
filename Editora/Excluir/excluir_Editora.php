@@ -11,9 +11,12 @@
 	?>
 	<form action="excluir_Editora_db.php" method="post">
 		<?php
-		$Id = $_GET['ID_EDITORA'];
+		$Id = $_GET['Id'];
 		?>
-		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
+		<input type="hidden" 
+		       name="Id" 
+			   value="<?php echo $Id; ?>">
+			   
 		<p>Deseja excluir o regitro número <?php echo $Id; ?>?</p>
 
 		<button type="submit">Sim</button>

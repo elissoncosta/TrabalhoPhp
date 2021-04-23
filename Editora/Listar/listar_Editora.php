@@ -19,17 +19,17 @@ include('../../conexao.php');
 	$msg  = @$_GET['msg'];
 
 	if ($ok == 1) {
-		echo "<p class=\"sucesso\">Bônus excluído com sucesso! Bônus código: {$msg}</p>";
+		echo "<p class=\"sucesso\">Editora excluída com sucesso! Editora código: {$msg}</p>";
 	} else if ($ok == 2) {
-		echo "<p class=\"sucesso\">Bônus cadastrado com sucesso! Bônus código: {$msg}</p>";
+		echo "<p class=\"sucesso\">Editora cadastrada com sucesso! Editora código: {$msg}</p>";
 	} else if ($ok == 3) {
-		echo "<p class=\"sucesso\">Bônus alterado com sucesso! Bônus código: {$msg}</p>";
+		echo "<p class=\"sucesso\">Editora alterada com sucesso! Editora código: {$msg}</p>";
 	}
 	if ($erro == 1) {
-		echo "<p class=\"erro\">Bônus não excluído! MySQL erro: {$msg}</p>";
+		echo "<p class=\"erro\">Editora não excluída! MySQL erro: {$msg}</p>";
 	}
 	?>
-	<br><br><a href="../Cadastrar/cadastrar_cliente_bonus.php">Cadastrar</a><br><br>
+	<br><br><a href="../Cadastrar/cadastrar_Editora.php">Cadastrar</a><br><br>
 	<table>
 		<thead>
 			<tr>
