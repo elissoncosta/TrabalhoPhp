@@ -1,12 +1,12 @@
 <?php
 include('../../conexao.php');
 
-$Sequence = $_POST['sequence'];
-$IdLocacao = $_POST['locacao_id'];
-$IdTitulo  = $_POST['titulo_id'];
+$Sequence = $_POST['Sequence'];
+$IdLocacao = $_POST['IdLocacao'];
+$IdTitulo  = $_POST['IdTitulo'];
 
 $sql = "INSERT INTO ITEM_LOCACAO 
-        VALUES (null, '{$Sequence}', '{$IdLocacao}', '{$IdTitulo}'";
+        VALUES ('{$Sequence}', null, '{$IdLocacao}', '{$IdTitulo}'";
 
 $query = mysqli_query($conexao, $sql);
 if ($query) {
