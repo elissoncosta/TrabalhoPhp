@@ -21,56 +21,70 @@ include('../../conexao.php');
 		echo "<p class=\"erro\">Titulo não cadastrado! MySQL erro: {$msg}</p>";
 	}
 	?>
-	<form action="cadastrar_Titulos_db.php" method="post">
+	<form action="./cadastrar_Titulo_db.php" method="post">
 
-		<label for="titulo">Título</label><br>
+		<label for="Titulo">Título</label><br>
 		<input type="text" 
-		       name="titulo" 
-			   id="titulo" 
+		       name="Titulo" 
+			   id="Titulo" 
 			   maxlength="150"><br><br>
 
-		<label for="duracao">Duração</label><br>
-		<input type="text" 
-		       name="duracao" 
-			   id="duracao" 
-			   maxlength="8"><br><br>
-
-		<label for="valor_compra">Valor Compra</label><br>
-		<input type="text" 
-		       name="valor_compra" 
-			   id="valor_compra" 
-			   maxlength="6"><br><br>
-
-		<label for="valor_locacao">Valor Locação</label><br>
-		<input type="text" 
-		       name="valor_locacao" 
-			   id="valor_locacao" 
-			   maxlength="5"><br><br>
-
-		<label for="tipo_midia">Tipo Titulo</label><br>
-		<select name="tipo_midia" id="tipo_midia">
-			<option value="VHS">VHS</option>
-			<option value="DVD">DVD</option>
-			<option value="Blu-Ray">Blu-Ray</option>
+		<select name="Tipo" id="Tipo">
+			<option value="Terror" >Terror</option>
+			<option value="Comédia" >Comédia</option>
+			<option value="Romance" >Romance</option>
+			<option value="Animação" >Animação</option>
+			<option value="Documentário" >Documentário</option>
 		</select><br><br>
 
-		<label for="classificacao">Classificação</label><br>
-		<select name="classificacao" id="classificacao">
-			<option value="A">A</option>
-			<option value="B">B</option>
-			<option value="C">C</option>
-			<option value="D">D</option>
+		<label for="Classificacao">Classificação Indicativa</label><br>
+		<select name="Classificacao" id="Classificacao">
+			<option value="1">Livre</option>
+			<option value="2">10 Anos</option>
+			<option value="3">12 Anos</option>
+			<option value="4">16 Anos</option>
+			<option value="5">18 Anos</option>
 		</select><br><br>
 
-		<label for="quantidade">Quantidade</label><br>
+		<label for="Quantidade">Quantidade</label><br>
 		<input type="number" 
-		       name="quantidade" 
-			   id="quantidade"><b
+		       name="Quantidade" 
+			   id="Quantidade"><b
 			   r><br>
 
-		<label for="sinopse">Sinopse</label><br>
-		<textarea name="sinopse" 
-		          id="sinopse"></textarea><br><br>
+		<label for="Sinopse">Sinopse</label><br>
+		<textarea name="Sinopse" 
+		          id="Sinopse"></textarea><br><br>
+		
+				  <label for="Id">Cliente</label><br>
+		<select name="Id" id="Id">
+			<?php
+			$sql = "SELECT id_categoria as IdCategoria, descricao FROM categoria";
+			$query = mysqli_query($conexao, $sql);
+			while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+			?>
+				<option value="<?php echo $item['IdCategoria']; ?>">
+					<?php echo $item['descricao']; ?>
+				</option>
+			<?php
+			}
+			?>
+		</select><br><br>
+
+		<label for="Id">Cliente</label><br>
+		<select name="Id" id="Id">
+			<?php
+			$sql = "SELECT id_editora as IdEditora, razao_social FROM editora";
+			$query = mysqli_query($conexao, $sql);
+			while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+			?>
+				<option value="<?php echo $item['IdEditora']; ?>">
+					<?php echo $item['razao_social']; ?>
+				</option>
+			<?php
+			}
+			?>
+		</select><br><br>
 
 		<button type="submit">Cadastrar</button>
 	</form>

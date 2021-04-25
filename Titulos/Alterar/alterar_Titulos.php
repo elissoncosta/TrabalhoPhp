@@ -63,13 +63,14 @@ include('../../conexao.php');
 		<label for="IdEditora">Item</label><br>
 		<select name="IdEditora" id="IdEditora">
 			<?php
-			$sql = "SELECT ID_EDITORA as IdEditora, RAZAO_SOCIAL FROM EDITORA";
+			$sql = "SELECT ID_EDITORA as IdEditora, razao_social FROM EDITORA";
 			$query = mysqli_query($conexao, $sql);
+
 			while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			?>
 				<option value="<?php echo $item['IdEditora']; ?>" 
-					<?php if ($dado['IdEditora'] == $item['IdEditora']) { ?>selected="selected" <?php } ?>>
-					<?php echo $item['RAZAO_SOCIAL']; ?>
+					<?php if ($dado['IdEditora'] == $item['IdEditora']) 
+					{ ?>selected="selected" <?php } ?>><?php echo $item['razao_social']; ?>
 				</option>
 			<?php
 			}
@@ -84,8 +85,8 @@ include('../../conexao.php');
 			while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			?>
 				<option value="<?php echo $item['IdCategoria']; ?>" 
-					<?php if ($dado['IdCategoria'] == $item['IdCategoria']) { ?>selected="selected" <?php } ?>>
-					<?php echo $item['descricao']; ?>
+					<?php if ($dado['IdCategoria'] == $item['IdCategoria']) 
+					{ ?>selected="selected" <?php } ?>><?php echo $item['descricao']; ?>
 				</option>
 			<?php
 			}
@@ -94,9 +95,11 @@ include('../../conexao.php');
 
 		<label for="tipo">Tipo Titulo</label><br>
 		<select name="tipo" id="tipo">
-			<option value="VHS" <?php if ($dado['tipo'] == 'VHS') { ?>selected="selected" <?php } ?>>VHS</option>
-			<option value="DVD" <?php if ($dado['tipo'] == 'DVD') { ?>selected="selected" <?php } ?>>DVD</option>
-			<option value="Blu-Ray" <?php if ($dado['tipo'] == 'Blu-Ray') { ?>selected="selected" <?php } ?>>Blu-Ray</option>
+			<option value="Terror" <?php if ($dado['tipo'] == 'Terror') { ?>selected="selected" <?php } ?>>Terror</option>
+			<option value="Comédia" <?php if ($dado['tipo'] == 'Comédia') { ?>selected="selected" <?php } ?>>Comédia</option>
+			<option value="Romance" <?php if ($dado['tipo'] == 'Romance') { ?>selected="selected" <?php } ?>>Romance</option>
+			<option value="Animação" <?php if ($dado['tipo'] == 'Animação') { ?>selected="selected" <?php } ?>>Animação</option>
+			<option value="Documentário" <?php if ($dado['tipo'] == 'Documentário') { ?>selected="selected" <?php } ?>>Documentário</option>
 		</select><br><br>
 
 		<label for="classificacao">Classificação Indicativa</label><br>

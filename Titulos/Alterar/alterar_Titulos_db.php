@@ -4,10 +4,10 @@ include('../../conexao.php');
 $Id = $_POST['Id'];
 $titulo = $_POST['titulo'];
 $sinopse = $_POST['sinopse'];
-$IdEditora = $_POST['IdEditora'];
-$IdCategoria = $_POST['IdCategoria'];
-$tipo = $_POST['tipo'];
 $classificacao = $_POST['classificacao'];
+$tipo = $_POST['tipo'];
+$IdCategoria = $_POST['IdCategoria'];
+$IdEditora = $_POST['IdEditora'];
 
 $sql = "UPDATE TITULOS ,
            SET TITULO = '{$titulo}',

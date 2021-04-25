@@ -1,13 +1,11 @@
 <?php
 include('../../conexao.php');
 
-$Id = $_POST['ID_TITULO'];
-$Titulo = $_POST['TITULO'];
-$Sinopse = $_POST['SINOPSE'];
-$Classificacao = $_POST['CLASSIFICACAO'];
-$Tipo = $_POST['TIPO'];
-$IdCategoria = $_POST['categoria_ID'];
-$IdEditora = $_POST['EDITORA_ID'];
+$Titulo = $_POST['Titulo'];
+$Sinopse = $_POST['Sinopse'];
+$Classificacao = $_POST['Classificacao'];
+$Tipo = $_POST['Tipo'];
+$Quantidade = $_POST['Quantidade'];
 
 $sql = "INSERT INTO TITULOS 
         VALUES (null, '{$Titulo}', '{$Sinopse}', '{$Classificacao}', '{$Tipo}', '{$IdCategoria}', '{$IdEditora}')";
