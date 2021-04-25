@@ -9,7 +9,7 @@ $tipo = $_POST['tipo'];
 $IdCategoria = $_POST['IdCategoria'];
 $IdEditora = $_POST['IdEditora'];
 
-$sql = "UPDATE TITULOS ,
+$sql = "UPDATE TITULOS
            SET TITULO = '{$titulo}',
                SINOPSE = '{$sinopse}',
                CLASSIFICACAO = '{$classificacao}',

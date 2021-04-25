@@ -4,6 +4,7 @@
 <head>
 	<title>Biblioteca</title>
 	<link rel="stylesheet" type="text/css" href="./Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="./Styles/login.css">
 </head>
 
 <body>
@@ -16,20 +17,20 @@
 		echo "<p class=\"erro\">Usuário está inativo!</p>";
 	}
 	?>
-	<div id="logotipo_login"></div>
-	<div id="box">
+	<div id="logotipo_login" class="loginBox">
+		<img src="./Images/User.jpg" alt="avatar" class="avatar">
+		<h1>Login</h1>
 		<form action="./login_db.php" method="POST">
-			<fieldset>
-			<legend>Login:</legend>
-				<label for="user">Usúario:</label>
-				<input type="text" name="user" id="user" maxlength="20"><br><br>
+			<p>Usuário</p>
+			<input type="text" name="user" id="user" maxlength="20" placeholder="Digite seu usuário"><br><br>
 
-				<label for="senha">Senha:</label>
-				<input type="password" name="senha" id="senha" maxlength="20"><br><br>
+			<p>Senha</p>
+			<input type="password" name="senha" id="senha" maxlength="20" placeholder="Insira sua senha"><br><br>
 
-				<button type="submit">Login</button>
-			</fieldset>
+			<button type="submit">Login</button>
+			
 		</form>
+	
 	</div>
 </body>
 
