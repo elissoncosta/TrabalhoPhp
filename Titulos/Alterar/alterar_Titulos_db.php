@@ -4,18 +4,18 @@ include('../../conexao.php');
 $Id = $_POST['Id'];
 $titulo = $_POST['titulo'];
 $sinopse = $_POST['sinopse'];
-$classificacao = $_POST['classificacao'];
-$tipo = $_POST['tipo'];
-$IdCategoria = $_POST['IdCategoria'];
 $IdEditora = $_POST['IdEditora'];
+$IdCategoria = $_POST['IdCategoria'];
+$tipo = $_POST['tipo'];
+$classificacao = $_POST['classificacao'];
 
 $sql = "UPDATE TITULOS ,
            SET TITULO = '{$titulo}',
                SINOPSE = '{$sinopse}',
                CLASSIFICACAO = '{$classificacao}',
                TIPO = '{$tipo}',
-            --    CATEGORIA_ID = '{$IdCategoria}',
-            --    EDITORA_ID = '{$IdEditora}'
+               CATEGORIA_ID = '{$IdCategoria}',
+               EDITORA_ID = '{$IdEditora}'
          WHERE ID_TITULO = '{$Id}'";
 
 $query = mysqli_query($conexao, $sql);

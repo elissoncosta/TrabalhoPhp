@@ -29,7 +29,7 @@ include('../../conexao.php');
 		echo "<p class=\"erro\">Titulo não excluído! MySQL erro: {$msg}</p>";
 	}
 	?>
-	<br><br><a href="cadastrar_Titulos.php">Cadastrar</a><br><br>
+	<br><br><a href="../Cadastrar/cadastrar_Titulo.php">Cadastrar</a><br><br>
 	<table>
 		<thead>
 			<tr>
