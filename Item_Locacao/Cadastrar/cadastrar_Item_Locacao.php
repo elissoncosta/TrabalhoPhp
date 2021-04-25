@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-	<title>Cadastrar Distribuidores</title>
+	<title>Cadastrar Itemes</title>
 	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
@@ -16,7 +16,7 @@
 	$msg  = @$_GET['msg'];
 
 	if ($erro == 2) {
-		echo "<p class=\"erro\">Distribuidor não cadastrado! MySQL erro: {$msg}</p>";
+		echo "<p class=\"erro\">Item não cadastrado! MySQL erro: {$msg}</p>";
 	}
 	?>
 	<form action="cadastrar_Item_Locacao_db.php" method="post">
@@ -32,7 +32,7 @@
 			while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			?>
 				<option value="<?php echo $item['IdLocacao']; ?>">
-				<?php echo $item['IdLocacao']; ?>
+					<?php echo $item['IdLocacao']; ?>
 				</option>
 			<?php
 			}

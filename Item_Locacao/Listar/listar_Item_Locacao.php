@@ -19,11 +19,11 @@ include('../../conexao.php');
 	$msg  = @$_GET['msg'];
 
 	if ($ok == 1) {
-		echo "<p class=\"sucesso\">Distribuidor excluído com sucesso! Distribuidor código: {$msg}</p>";
+		echo "<p class=\"sucesso\">Item excluído com sucesso! Item código: {$msg}</p>";
 	} else if ($ok == 2) {
-		echo "<p class=\"sucesso\">Distribuidor cadastrado com sucesso! Distribuidor código: {$msg}</p>";
+		echo "<p class=\"sucesso\">Item cadastrado com sucesso! Item código: {$msg}</p>";
 	} else if ($ok == 3) {
-		echo "<p class=\"sucesso\">Distribuidor alterado com sucesso! Distribuidor código: {$msg}</p>";
+		echo "<p class=\"sucesso\">Item alterado com sucesso! Item código: {$msg}</p>";
 	}
 
 	if ($erro == 1) {

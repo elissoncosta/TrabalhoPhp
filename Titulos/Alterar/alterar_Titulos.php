@@ -60,7 +60,7 @@ include('../../conexao.php');
 				  rows="5"value="<?php echo $dado['sinopse']; ?>"></textarea>
 		<br><br>
 
-		<label for="IdEditora">Distribuidor</label><br>
+		<label for="IdEditora">Item</label><br>
 		<select name="IdEditora" id="IdEditora">
 			<?php
 			$sql = "SELECT ID_EDITORA as IdEditora, RAZAO_SOCIAL FROM EDITORA";

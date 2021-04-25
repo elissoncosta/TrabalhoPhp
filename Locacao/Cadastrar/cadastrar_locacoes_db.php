@@ -1,12 +1,12 @@
 <?php
 include('../../conexao.php');
 
-$IdCliente = $_POST['ID_CLIENTE'];
+$IdCliente = $_POST['Id'];
 $Valor = $_POST['Valor'];
-$Locacao = $_POST['DATA_LOCACAO'];
-$Entrega = $_POST['DATA_ENTREGA'];
+$Locacao = $_POST['Locacao'];
+$Entrega = $_POST['Entrega'];
 
-$sql = "INSERT INTO locacao VALUES (null, '{$IdCliente}', '{$Valor}', '{$Locacao}', '{$Entrega}')";
+$sql = "INSERT INTO locacao VALUES (null, '{$Locacao}', '{$Entrega}', '{$Valor}', '{$IdCliente}')";
 
 $query = mysqli_query($conexao, $sql);
 if ($query) {

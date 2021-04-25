@@ -6,7 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Cadastrar Locação</title>
-			<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
 <body>
@@ -22,24 +22,35 @@ include('../../conexao.php');
 	}
 	?>
 	<form action="cadastrar_locacoes_db.php" method="post">
-		<label for="ID_CLIENTE">Cliente</label><br>
-		<select name="ID_CLIENTE" id="ID_CLIENTE">
+		<label for="Id">Cliente</label><br>
+		<select name="Id" id="Id">
 			<?php
-			$sql = "SELECT ID_CLIENTE, NOME FROM CLIENTE";
+			$sql = "SELECT ID_CLIENTE as Id, NOME FROM CLIENTE";
 			$query = mysqli_query($conexao, $sql);
 			while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 			?>
-				<option value="<?php echo $item['ID_CLIENTE']; ?>"><?php echo $item['NOME']; ?></option>
+				<option value="<?php echo $item['Id']; ?>">
+					<?php echo $item['NOME']; ?>
+				</option>
 			<?php
 			}
 			?>
 		</select><br><br>
 
-		<label for="Locacao">Data Locaão</label><br>
-		<input type="date" name="Locacao" id="Locacao"><br><br>
+		<label for="Valor">Valor</label><br>
+		<input type="number"
+		       name="Valor"
+		       id="Valor"><br><br>
+
+		<label for="Locacao">Data Locação</label><br>
+		<input type="date"
+		       name="Locacao"
+		       id="Locacao"><br><br>
 
 		<label for="Entrega">Data Entrega</label><br>
-		<input type="date" name="Entrega" id="Entrega"><br><br>
+		<input type="date" 
+		       name="Entrega" 
+		       id="Entrega"><br><br>
 
 		<button type="submit">Cadastrar</button>
 	</form>

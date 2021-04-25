@@ -11,7 +11,7 @@
 	?>
 	<form action="excluir_locacoes_db.php" method="post">
 		<?php
-		$Id = $_GET['ID_LOCACAO'];
+		$Id = $_GET['Id'];
 		?>
 		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
 		<p>Deseja excluir o regitro número <?php echo $Id; ?>?</p>

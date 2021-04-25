@@ -6,7 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Listar Cliente Locações</title>
-			<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@ include('../../conexao.php');
 		echo "<p class=\"erro\">Locação não excluída! MySQL erro: {$msg}</p>";
 	}
 	?>
-	<br><br><a href="cadastrar_locacoes.php">Cadastrar</a><br><br>
+	<br><br><a href="../Cadastrar/cadastrar_locacoes.php">Cadastrar</a><br><br>
 	<table>
 		<thead>
 			<tr>

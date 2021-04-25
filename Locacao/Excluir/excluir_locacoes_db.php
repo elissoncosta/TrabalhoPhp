@@ -1,7 +1,7 @@
 <?php
 	include('../../conexao.php');
 
-	$Id = $_POST['ID_LOCACAO'];
+	$Id = $_POST['Id'];
 	
 	$sql = "DELETE FROM LOCACAO WHERE ID_LOCACAO = {$Id}";
 	

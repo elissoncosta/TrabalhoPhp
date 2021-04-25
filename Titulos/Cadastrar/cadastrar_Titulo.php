@@ -22,7 +22,7 @@ include('../../conexao.php');
 	}
 	?>
 	<form action="cadastrar_Titulos_db.php" method="post">
-		<label for="id_distribuidor">Distribuidor</label><br>
+		<label for="id_distribuidor">Item</label><br>
 		<select name="id_distribuidor" id="id_distribuidor">
 			<?php
 			$sql = "SELECT id, razao_social FROM distribuidor";
