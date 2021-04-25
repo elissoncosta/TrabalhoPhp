@@ -16,10 +16,12 @@ include('../../conexao.php');
 	<?php
 	$erro = @$_GET['erro'];
 	$msg  = @$_GET['msg'];
+
 	if ($erro == 3) {
 		echo "<p class=\"erro\">Titulo não alterado! MySQL erro: {$msg}</p>";
 	}
 	?>
+	
 	<form action="alterar_Titulos_db.php" method="post">
 		<?php
 		$Id = $_GET['Id'];
