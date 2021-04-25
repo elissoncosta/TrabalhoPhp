@@ -13,7 +13,7 @@ if ($usuario == 1) {
 	$item = mysqli_fetch_array($query, MYSQLI_ASSOC);
 
 	if ($item['status'] == 'A') {
-		header('Location: painel.php');
+		header('Location:  ./Home/Painel/painel.php');
 	} else {
 		header('Location: index.php?erro=2');
 	}

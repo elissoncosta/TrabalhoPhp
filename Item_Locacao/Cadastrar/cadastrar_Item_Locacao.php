@@ -9,6 +9,7 @@
 <body>
 	<?php
 	include('../../menu.php');
+	include('../../conexao.php ');
 	?>
 	<?php
 	$erro = @$_GET['erro'];
