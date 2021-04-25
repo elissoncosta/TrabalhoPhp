@@ -23,6 +23,7 @@ include('../../conexao.php');
 	?>
 	<form action="./cadastrar_Titulo_db.php" method="post">
 
+
 		<label for="Titulo">Título</label><br>
 		<input type="text" 
 		       name="Titulo" 
