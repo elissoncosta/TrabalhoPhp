@@ -23,7 +23,6 @@ include('../../conexao.php');
 	?>
 	<form action="./cadastrar_Titulo_db.php" method="post">
 
-
 		<label for="Titulo">Título</label><br>
 		<input type="text" 
 		       name="Titulo" 
@@ -31,11 +30,11 @@ include('../../conexao.php');
 			   maxlength="150"><br><br>
 
 		<select name="Tipo" id="Tipo">		
-			<option value="Terror" >Terror</option>
-			<option value="Comédia" >Comédia</option>
-			<option value="Romance" >Romance</option>
-			<option value="Animação" >Animação</option>
-			<option value="Documentário" >Documentário</option>
+			<option value="Terror">Terror</option>
+			<option value="Comédia">Comédia</option>
+			<option value="Romance">Romance</option>
+			<option value="Animação">Animação</option>
+			<option value="Documentário">Documentário</option>
 		</select><br><br>
 
 		<label for="Classificacao">Classificação Indicativa</label><br>
@@ -53,12 +52,15 @@ include('../../conexao.php');
 			   id="Quantidade"><b
 			   r><br>
 
-		<label for="Sinopse">Sinopse</label><br>
-		<textarea name="Sinopse" 
-		          id="Sinopse"></textarea><br><br>
+		<label for="sinopse">Sinopse</label><br>
+		<textarea name="sinopse" 
+		          id="sinopse" 
+				  cols="40" 
+				  rows="5"value="<?php echo $dado['sinopse']; ?>"></textarea>
+		<br><br>
 		
-				  <label for="Id">Cliente</label><br>
-		<select name="Id" id="Id">
+		<label for="IdCategoria">Categoria</label><br>
+		<select name="IdCategoria" id="IdCategoria">
 			<?php
 			$sql = "SELECT id_categoria as IdCategoria, descricao FROM categoria";
 			$query = mysqli_query($conexao, $sql);
@@ -72,8 +74,8 @@ include('../../conexao.php');
 			?>
 		</select><br><br>
 
-		<label for="Id">Cliente</label><br>
-		<select name="Id" id="Id">
+		<label for="IdEditora">Editora</label><br>
+		<select name="IdEditora" id="IdEditora">
 			<?php
 			$sql = "SELECT id_editora as IdEditora, razao_social FROM editora";
 			$query = mysqli_query($conexao, $sql);
