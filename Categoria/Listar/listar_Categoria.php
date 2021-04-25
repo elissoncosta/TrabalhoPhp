@@ -6,7 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Listar Categoria</title>
-			<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
 <body>
