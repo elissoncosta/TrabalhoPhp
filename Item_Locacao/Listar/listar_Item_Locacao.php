@@ -51,7 +51,8 @@ include('../../conexao.php');
                            T.titulo
                       FROM ITEM_LOCACAO I
                       JOIN LOCACAO L ON (L.ID_LOCACAO = I.LOCACAO_ID)
-                      JOIN TITULOS T ON (T.ID_TITULO = I.TITULO_ID)";
+                      JOIN TITULOS T ON (T.ID_TITULO = I.TITULO_ID)
+					  ORDER BY I.ID_ITEM_LOCACAO";
 
 			$query = mysqli_query($conexao, $sql);
 

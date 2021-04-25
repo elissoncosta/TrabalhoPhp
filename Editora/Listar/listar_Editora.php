@@ -54,7 +54,8 @@ include('../../conexao.php');
                            complemento,
                            cep,
                            email 
-                      FROM EDITORA";
+                      FROM EDITORA
+					  ORDER BY ID_EDITORA";
 
 			$query = mysqli_query($conexao, $sql);
 			if (!$query) {

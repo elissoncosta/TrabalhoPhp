@@ -44,7 +44,8 @@ include('../../conexao.php');
 			$sql = "SELECT ID_CATEGORIA AS Id,
 		                   descricao,
 		                   classificacao_indicativa 
-	                  FROM CATEGORIA";
+	                  FROM CATEGORIA
+					  ORDER BY ID_CATEGORIA";
 
 			$query = mysqli_query($conexao, $sql);
 			if (!$query) {

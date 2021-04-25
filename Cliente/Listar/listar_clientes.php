@@ -52,7 +52,8 @@ include('../../conexao.php');
                            sexo,
                            endereco,
                            numero_endereco
-                      FROM CLIENTE";
+                      FROM CLIENTE
+					  ORDER BY ID_CLIENTE";
 
 			$query = mysqli_query($conexao, $sql);
 			if (!$query) {

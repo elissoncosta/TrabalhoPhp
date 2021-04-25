@@ -51,7 +51,8 @@ include('../../conexao.php');
 		                   L.data_locacao,
 		                   L.data_entrega 
 	                  FROM LOCACAO L
-	                  JOIN CLIENTE C ON (C.ID_CLIENTE = L.CLIENTE_ID)";
+	                  JOIN CLIENTE C ON (C.ID_CLIENTE = L.CLIENTE_ID)
+					  ORDER BY L.id_locacao";
 
 			$query = mysqli_query($conexao, $sql);
 			if (!$query) {

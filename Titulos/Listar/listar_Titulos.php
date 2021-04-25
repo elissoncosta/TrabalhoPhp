@@ -54,7 +54,8 @@ include('../../conexao.php');
                            E.razao_social
                       FROM TITULOS T
                       JOIN CATEGORIA C ON (C.ID_CATEGORIA = T.CATEGORIA_ID)
-                      JOIN EDITORA E ON (E.ID_EDITORA = T.EDITORA_ID)";
+                      JOIN EDITORA E ON (E.ID_EDITORA = T.EDITORA_ID)
+					  ORDER BY T.ID_TITULO";
 
 			$query = mysqli_query($conexao, $sql);
 			if (!$query) {
