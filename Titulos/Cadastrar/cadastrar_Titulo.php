@@ -29,8 +29,7 @@ include('../../conexao.php');
 			   id="Titulo" 
 			   maxlength="150"><br><br>
 
-		<select name="Tipo" id="Tipo">
-		
+		<select name="Tipo" id="Tipo">		
 			<option value="Terror" >Terror</option>
 			<option value="Comédia" >Comédia</option>
 			<option value="Romance" >Romance</option>
