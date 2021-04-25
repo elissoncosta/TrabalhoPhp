@@ -16,15 +16,21 @@
 		echo "<p class=\"erro\">Usuário está inativo!</p>";
 	}
 	?>
-	<form action="./login_db.php" method="POST">
-		<label for="user">Login</label><br>
-		<input type="text" name="user" id="user" maxlength="20"><br><br>
+	<div id="logotipo_login"></div>
+	<div id="box">
+		<form action="./login_db.php" method="POST">
+			<fieldset>
+			<legend>Login:</legend>
+				<label for="user">Usúario:</label>
+				<input type="text" name="user" id="user" maxlength="20"><br><br>
 
-		<label for="senha">Senha</label><br>
-		<input type="password" name="senha" id="senha" maxlength="20"><br><br>
+				<label for="senha">Senha:</label>
+				<input type="password" name="senha" id="senha" maxlength="20"><br><br>
 
-		<button type="submit">Login</button>
-	</form>
+				<button type="submit">Login</button>
+			</fieldset>
+		</form>
+	</div>
 </body>
 
 </html>
