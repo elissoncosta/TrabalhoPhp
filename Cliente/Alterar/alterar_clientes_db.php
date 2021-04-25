@@ -20,7 +20,7 @@ $sql = "UPDATE CLIENTE
 
 $query = mysqli_query($conexao, $sql);
 if ($query) {
-	header('Location: ../Listar/listar_clientes.php?ok=3&msg=' . mysqli_insert_id($conexao));
+	header('Location: ../Listar/listar_clientes.php?ok=3&msg=' . $Id);
 } else {
 	header('Location: alterar_clientes.php?Id=' . $Id . '&erro=3&msg=' . mysqli_error($conexao));
 }
