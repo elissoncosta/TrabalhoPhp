@@ -100,8 +100,8 @@ INSERT INTO `editora` (`id_editora`, `razao_social`, `telefone`, `endereco`, `nu
 --
 
 CREATE TABLE `item_locacao` (
-  `sequence` int(11) NOT NULL,
   `id_item_locacao` int(11) NOT NULL,
+  `sequence` int(11) NOT NULL,
   `locacao_id` int(11) NOT NULL,
   `titulo_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -110,7 +110,7 @@ CREATE TABLE `item_locacao` (
 -- Extraindo dados da tabela `item_locacao`
 --
 
-INSERT INTO `item_locacao` (`sequence`, `id_item_locacao`, `locacao_id`, `titulo_id`) VALUES
+INSERT INTO `item_locacao` (`id_item_locacao`, `sequence`, `locacao_id`, `titulo_id`) VALUES
 (1, 1, 2, 3),
 (3, 2, 1, 2),
 (2, 3, 1, 1);

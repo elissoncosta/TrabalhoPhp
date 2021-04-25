@@ -6,7 +6,7 @@ $IdLocacao = $_POST['IdLocacao'];
 $IdTitulo  = $_POST['IdTitulo'];
 
 $sql = "INSERT INTO ITEM_LOCACAO 
-        VALUES ('{$Sequence}', null, '{$IdLocacao}', '{$IdTitulo}'";
+        VALUES (null, '{$Sequence}', '{$IdLocacao}', '{$IdTitulo}'";
 
 $query = mysqli_query($conexao, $sql);
 if ($query) {
