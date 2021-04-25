@@ -97,11 +97,10 @@ include('../../conexao.php');
 
 		<label for="tipo">Tipo Titulo</label><br>
 		<select name="tipo" id="tipo">
-			<option value="Terror" <?php if ($dado['tipo'] == 'Terror') { ?>selected="selected" <?php } ?>>Terror</option>
-			<option value="Comédia" <?php if ($dado['tipo'] == 'Comédia') { ?>selected="selected" <?php } ?>>Comédia</option>
-			<option value="Romance" <?php if ($dado['tipo'] == 'Romance') { ?>selected="selected" <?php } ?>>Romance</option>
-			<option value="Animação" <?php if ($dado['tipo'] == 'Animação') { ?>selected="selected" <?php } ?>>Animação</option>
-			<option value="Documentário" <?php if ($dado['tipo'] == 'Documentário') { ?>selected="selected" <?php } ?>>Documentário</option>
+			<option value="Livro" <?php if ($dado['tipo'] == 'Livro') { ?>selected="selected" <?php } ?>>Livro</option>
+			<option value="Revista" <?php if ($dado['tipo'] == 'Revista') { ?>selected="selected" <?php } ?>>Revista</option>
+			<option value="Mangá" <?php if ($dado['tipo'] == 'Mangá') { ?>selected="selected" <?php } ?>>Mangá</option>
+			<option value="Gibi" <?php if ($dado['tipo'] == 'Gibi') { ?>selected="selected" <?php } ?>>Gibi</option>
 		</select><br><br>
 
 		<label for="classificacao">Classificação Indicativa</label><br>
