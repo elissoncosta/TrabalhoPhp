@@ -60,7 +60,7 @@
 						   id="Numero" 
 						   maxlength="10"><br><br>
 				</form>
-				<button type="submit">Cadastrar</button>
+				<button class="btn" type="submit">Cadastrar</button>
 			</div>
 		</div>
 	</div>
