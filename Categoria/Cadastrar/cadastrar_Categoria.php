@@ -8,12 +8,16 @@ include('../../conexao.php');
 	<title>Cadastrar Categoria</title>
 	<link rel="stylesheet" type="text/css" href="../../Styles/site.css">
 	<link rel="stylesheet" type="text/css" href="../../Styles/cadastro.css ">
+	<link rel="stylesheet" type="text/css" href="../../Styles/Listar.css">
 </head>
 
 <body>
-	<?php
-	include('../../menu.php');
-	?>
+	<nav id="menu-h">
+		<?php
+		include('../../menu.php');
+		?>
+	</nav>
+	
 	<?php
 	$erro = @$_GET['erro'];
 	$msg  = @$_GET['msg'];

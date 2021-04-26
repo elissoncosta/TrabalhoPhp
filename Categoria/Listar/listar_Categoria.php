@@ -11,11 +11,15 @@ include('../../conexao.php');
 </head>
 
 <body>
-	<?php
-	include('../../menu.php');
-	?>
+	<nav id="menu-h">
+		<?php
+		include('../../menu.php');
+		?>
+	</nav>
+
+	<div id="atalho"></div>
 	<div id="filtro" class="filtro">
-		<button type="button"><a href="../Cadastrar/cadastrar_Titulo.php">Cadastrar Novo Titulo</a></button>
+		<button type="button"><a href="../Cadastrar/cadastrar_Categoria.php">Cadastrar Nova Categoria</a></button>
 		<input class="button_pesquisar" type="search" class="busca">
 		<button type="button">Buscar</button>		
 	</div>
@@ -87,7 +91,7 @@ include('../../conexao.php');
 			</tbody>
 		</table>
 		Exitem <?php echo mysqli_num_rows($query); ?> Itens
-	<div id="lista">
+	<div>
 </body>
 
 </html>
