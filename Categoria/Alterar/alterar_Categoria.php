@@ -6,6 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Alterar Categoria</title>
+	<link rel="stylesheet" type="text/css" href="../../Styles/cadastro.css">
 	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
 </head>
 
@@ -21,45 +22,53 @@ include('../../conexao.php');
 		echo "<p class=\"erro\">Categoria não alterada! MySQL erro: {$msg}</p>";
 	}
 	?>
-	<form action="alterar_Categoria_db.php" method="post">
-		<?php
-		$Id = $_GET['Id'];
+	<div class="wrapper">
+		<div class="cadastro">
+			<div class="campos">
+				<form action="alterar_Categoria_db.php" method="post">
+					<?php
+					$Id = $_GET['Id'];
 
-		$sql = "SELECT ID_CATEGORIA AS Id,
-		               descricao,
-		               classificacao_indicativa 
-				  FROM CATEGORIA WHERE ID_CATEGORIA = {$Id}";
+					$sql = "SELECT ID_CATEGORIA AS Id,
+								descricao,
+								classificacao_indicativa 
+							FROM CATEGORIA WHERE ID_CATEGORIA = {$Id}";
 
-		$query = mysqli_query($conexao, $sql);
-		$dado = mysqli_fetch_array($query, MYSQLI_ASSOC);
-		?>
+					$query = mysqli_query($conexao, $sql);
+					$dado = mysqli_fetch_array($query, MYSQLI_ASSOC);
+					?>
 
-		<input type="hidden" name="Id" value="<?php echo $Id; ?>">
+					<input type="hidden" name="Id" value="<?php echo $Id; ?>">
 
-		<label for="Id">Código</label><br>
-		<input type="text" 
-		       name="Id" 
-			   id="Id" 
-			   maxlength="11" 
-			   value="<?php echo $Id; ?>" 
-			   disabled="true"><br><br>
+					<label for="Id">Código</label><br>
+					<input type="text" 
+						name="Id" 
+						id="Id" 
+						maxlength="11" 
+						value="<?php echo $Id; ?>" 
+						disabled="true"><br><br>
 
-		<label for="nome">Descricao</label><br>
-		<input type="text" 
-		       name="Descricao" 
-			   id="Descricao" 
-			   maxlength="150" 
-			   value="<?php echo $dado['descricao']; ?>"><br><br>
+					<label for="nome">Descricao</label><br>
+					<input type="text" 
+						name="Descricao" 
+						id="Descricao" 
+						maxlength="150" 
+						value="<?php echo $dado['descricao']; ?>"><br><br>
 
-		<label for="Class_Indic">Classificação Indicativa</label><br>
-		<input type="number" 
-		       name="Class_Indic" 
-			   id="Class_Indic" 
-			   maxlength="11" 
-			   value="<?php echo $dado['classificacao_indicativa']; ?>"><br><br>
+					<label for="Class_Indic">Classificação Indicativa</label><br>
+					<select name="Class_Indic" id="Class_Indic">
+						<option value="1" <?php if ($dado['classificacao_indicativa'] == '1') { ?>selected="selected" <?php } ?>>Livre</option>
+						<option value="2" <?php if ($dado['classificacao_indicativa'] == '2') { ?>selected="selected" <?php } ?>>10 Anos</option>
+						<option value="3" <?php if ($dado['classificacao_indicativa'] == '3') { ?>selected="selected" <?php } ?>>12 Anos</option>
+						<option value="4" <?php if ($dado['classificacao_indicativa'] == '4') { ?>selected="selected" <?php } ?>>16 Anos</option>
+						<option value="5" <?php if ($dado['classificacao_indicativa'] == '5') { ?>selected="selected" <?php } ?>>18 Anos</option>
+					</select><br><br>
 
-		<button type="submit">Alterar</button>
-	</form>
+					<button class="btn" type="submit">Alterar</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

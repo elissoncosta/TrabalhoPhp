@@ -36,7 +36,7 @@ include('../../conexao.php');
 					<br><br>
 
 					<label for="Class_Indic">Classificação Indicativa</label><br>
-					<select name="classificacao" id="classificacao">
+					<select name="Class_Indic" id="Class_Indic">
 						<option value="1">Livre</option>
 						<option value="2">10 Anos</option>
 						<option value="3">12 Anos</option>
@@ -44,8 +44,8 @@ include('../../conexao.php');
 						<option value="5">18 Anos</option>
 					</select><br><br>
 
+					<button class="btn" type="submit">Cadastrar</button>
 				</form>
-				<button class="btn" type="submit">Cadastrar</button>
 			</div>
 		</div>
 	</div>

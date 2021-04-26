@@ -27,9 +27,10 @@
 				<form action="cadastrar_Item_Locacao_db.php" method="post">
 					<label for="Sequence">Sequencia</label><br>
 					<input type="number" 
-						name="Sequence" 
-						id="Sequence" 
-						maxlength="30"><br><br>
+						   name="Sequence" 
+						   id="Sequence" 
+						   maxlength="30" 
+						   placeholder="Sequencia.."><br><br>
 
 					<label for="IdLocacao">Locação</label><br>		
 					<select name="IdLocacao" id="IdLocacao">
@@ -62,8 +63,8 @@
 						?>
 					</select><br><br>
 
+					<button class="btn" type="submit">Cadastrar</button>
 				</form>
-				<button class="btn" type="submit">Cadastrar</button>
 			</div>
 		</div>
 	</div>
