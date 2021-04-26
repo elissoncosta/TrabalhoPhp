@@ -41,6 +41,12 @@
     
 }
 
+#filtro	a{		
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
 .busca{
     width:300px;
 }
@@ -69,4 +75,10 @@
     padding-top:10px;
     padding-bottom:10px;
 
+}
+
+.body_list tr td a{
+display: inline-block;
+text-decoration: none;
+color: black;
 }
