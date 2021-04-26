@@ -1,7 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../Images/Biblioteca.jpg);
+    background: url(../Images/Biblioteca.jpg) no-repeat top center;
+    background-size: cover;
+    height: 100vh;    
     background-position: center;
     font-family: sans-serif;
 }
