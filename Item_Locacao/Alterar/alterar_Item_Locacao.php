@@ -7,12 +7,15 @@ include('../../conexao.php');
 <head>
 	<title>Alterar Item Locação</title>
 	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../../Styles/Listar.css">
 </head>
 
 <body>
-	<?php
-	include('../../menu.php');
-	?>
+	<nav id="menu-h">
+		<?php
+		include('../../menu.php');
+		?>
+	</nav>
 	<?php
 	$erro = @$_GET['erro'];
 	$msg  = @$_GET['msg'];

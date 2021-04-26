@@ -105,7 +105,7 @@ include('../../conexao.php');
 				</tbody>
 			</table>
 			Exitem <?php echo mysqli_num_rows($query); ?> Itens
-		<div id="lista">
+		</div>
 	</body>
 
 </html>
