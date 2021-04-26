@@ -6,9 +6,8 @@ include('../../conexao.php');
 
 <head>
 	<title>Cadastrar Titulo</title>
-	<link rel="stylesheet" type="text/css" href="../../Styles/site.css">
 	<link rel="stylesheet" type="text/css" href="../../Styles/cadastro.css ">
-	<link rel="stylesheet" type="text/css" href="../../Styles/Listar.css">	
+	<link rel="stylesheet" type="text/css" href="../../Styles/menu.css ">
 </head>
 
 <body>
@@ -25,6 +24,7 @@ include('../../conexao.php');
 		echo "<p class=\"erro\">Titulo não cadastrado! MySQL erro: {$msg}</p>";
 	}
 	?>
+	
 	<div class="wrapper">
 		<div class="cadastro">
 			<div class="campos">
@@ -34,7 +34,8 @@ include('../../conexao.php');
 						   name="Titulo" 
 						   id="Titulo" 
 						   maxlength="150"
-						   placeholder="Título da obra..."><br><br>
+						   placeholder="Título da obra...">
+					<br>
 
 					<label for="Tipo">Tipo</label>
 					<select name="Tipo" id="Tipo">		
@@ -43,7 +44,8 @@ include('../../conexao.php');
 						<option value="Romance">Romance</option>
 						<option value="Animação">Animação</option>
 						<option value="Documentário">Documentário</option>
-					</select><br><br>
+					</select>
+					<br>
 
 					<label for="Classificacao">Classificação Indicativa</label><br>
 					<select name="Classificacao" id="Classificacao">
@@ -52,14 +54,15 @@ include('../../conexao.php');
 						<option value="3">12 Anos</option>
 						<option value="4">16 Anos</option>
 						<option value="5">18 Anos</option>
-					</select><br><br>
+					</select>
+					<br>
 
 					<label for="Quantidade">Quantidade</label><br>
 					<input type="number" 
 						   name="Quantidade" 
 						   id="Quantidade"
 						   placeholder="Quantidade disponível...">
-						   <br><br>
+					<br>
 					
 					<label for="IdCategoria">Categoria</label><br>
 					<select name="IdCategoria" id="IdCategoria">
@@ -74,7 +77,8 @@ include('../../conexao.php');
 						<?php
 						}
 						?>
-					</select><br><br>
+					</select>
+					<br>
 
 					<label for="IdEditora">Editora</label><br>
 					<select name="IdEditora" id="IdEditora">
@@ -89,7 +93,8 @@ include('../../conexao.php');
 						<?php
 						}
 						?>
-					</select><br><br>
+					</select>
+					<br>
 
 					<div class="sinopse">
 						<label for="sinopse">Sinopse</label><br>
@@ -99,7 +104,7 @@ include('../../conexao.php');
 								rows="5"
 								value="<?php echo $dado['sinopse']; ?>""
 								placeholder="Sinópse da obra..."></textarea>
-						<br><br>
+						<br>
 					</div>
 					<button class="btn" type="submit">Cadastrar</button>
 				</form>

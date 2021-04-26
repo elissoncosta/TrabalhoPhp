@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./Styles/menu.css">
 <ul>
     <li><a href="../../Home/Painel/painel.php">Início</a></li>
     <li><a href="../../Categoria/Listar/listar_Categoria.php">Categoria</a></li>
