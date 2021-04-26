@@ -11,11 +11,11 @@ include('../../conexao.php');
 	</head>
 
 	<body>
-	<?php
-	include('../../menu.php');
-	?>
+		<?php
+			include('../../menu.php');
+		?>
 
-		<div id="filtro">
+		<div id="filtro" class="filtro">
 			<button type="button"><a href="../Cadastrar/cadastrar_Titulo.php">Cadastrar Novo Titulo</a></button>
 			<input class="button_pesquisar" type="search" class="busca">
 			<button type="button">Buscar</button>		
@@ -59,8 +59,8 @@ include('../../conexao.php');
 									T.sinopse,
 									T.classificacao,
 									T.tipo,
-									C.descricao,
-									E.razao_social
+									C.descricao as catergoria,
+									E.razao_social as editora
 								FROM TITULOS T
 								JOIN CATEGORIA C ON (C.ID_CATEGORIA = T.CATEGORIA_ID)
 								JOIN EDITORA E ON (E.ID_EDITORA = T.EDITORA_ID) order by T.id_titulo";
@@ -76,18 +76,22 @@ include('../../conexao.php');
 						while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 						?>
 							<tr>
-								<td><?php echo $item['Id']; ?></td>
-								<td><?php echo $item['titulo']; ?></td>
-								<td><?php echo $item['sinopse']; ?></td>
-								<td><?php echo $item['classificacao']; ?></td>
-								<td><?php echo $item['tipo']; ?></td>
-								<td><?php echo $item['descricao']; ?></td>
-								<td><?php echo $item['razao_social']; ?></td>
+								<td class="campos" ><?php echo $item['Id']; ?></td>
+								<td class="texto" ><?php echo $item['titulo']; ?></td>
+								<td class="texto" ><?php echo $item['sinopse']; ?></td>
+								<td class="campos" ><?php echo $item['classificacao']; ?></td>
+								<td class="campos" ><?php echo $item['tipo']; ?></td>
+								<td class="campos" ><?php echo $item['catergoria']; ?></td>
+								<td class="campos" ><?php echo $item['editora']; ?></td>
 								<td>
-									<button type="button"><a href="../Alterar/alterar_Titulos.php?Id=<?php echo $item['Id']; ?>">Alterar</a></button>
+									<button class="btn" type="button">
+										<a href="../Alterar/alterar_Titulos.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
+									</button>
 								</td>
 								<td>
-									<button type="button"><a href="../Excluir/excluir_Titulo.php?Id=<?php echo $item['Id']; ?>">Excluir</a></button>								
+									<button class="btn" type="button">
+										<a href="../Excluir/excluir_Titulo.php?Id=<?php echo $item['Id']; ?>">Excluir</a>
+									</button>								
 								</td>
 							</tr>
 						<?php

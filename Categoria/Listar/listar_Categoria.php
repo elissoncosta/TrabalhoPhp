@@ -7,12 +7,19 @@ include('../../conexao.php');
 <head>
 	<title>Listar Categoria</title>
 	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../../Styles/Listar.css">
 </head>
 
 <body>
 	<?php
 	include('../../menu.php');
 	?>
+	<div id="filtro" class="filtro">
+		<button type="button"><a href="../Cadastrar/cadastrar_Titulo.php">Cadastrar Novo Titulo</a></button>
+		<input class="button_pesquisar" type="search" class="busca">
+		<button type="button">Buscar</button>		
+	</div>
+
 	<?php
 	$ok   = @$_GET['ok'];
 	$erro = @$_GET['erro'];
@@ -29,50 +36,58 @@ include('../../conexao.php');
 		echo "<p class=\"erro\">Categoria não excluída! MySQL erro: {$msg}</p>";
 	}
 	?>
-	<br><br><a href="../Cadastrar/cadastrar_Categoria.php">Cadastrar</a><br><br>
-	<table>
-		<thead>
-			<tr>
-				<th>Código</th>
-				<th>Descrição</th>
-				<th>Classificação Indicativa</th>
-				<th>Ações</th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php
-			$sql = "SELECT ID_CATEGORIA AS Id,
-		                   descricao,
-		                   classificacao_indicativa 
-	                  FROM CATEGORIA
-					  ORDER BY ID_CATEGORIA";
-
-			$query = mysqli_query($conexao, $sql);
-			if (!$query) {
-			?>
+	
+	<div id="lista">
+		<table>
+		<thead class="header_list">
 				<tr>
-					<td colspan="3"><?php echo 'MySQL Erro: ' . mysqli_error($conexao); ?></td>
+					<th>Código</th>
+					<th>Descrição</th>
+					<th>Classificação Indicativa</th>
+					<th colspan="2">Ações</th>
 				</tr>
+			</thead>
+			<tbody class="body_list">
 				<?php
-			} else {
-				while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+				$sql = "SELECT ID_CATEGORIA AS Id,
+							descricao,
+							classificacao_indicativa 
+						FROM CATEGORIA
+						ORDER BY ID_CATEGORIA";
+
+				$query = mysqli_query($conexao, $sql);
+				if (!$query) {
 				?>
 					<tr>
-						<td><?php echo $item['Id']; ?></td>
-						<td><?php echo $item['descricao']; ?></td>
-						<td><?php echo $item['classificacao_indicativa']; ?></td>
-						<td>
-							<a href="../Alterar/alterar_Categoria.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
-							<a href="../Excluir/excluir_Categoria.php?Id=<?php echo $item['Id']; ?>">Excluir</a>
-						</td>
+						<td colspan="3"><?php echo 'MySQL Erro: ' . mysqli_error($conexao); ?></td>
 					</tr>
-			<?php
+					<?php
+				} else {
+					while ($item = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+					?>
+						<tr>
+							<td class="campos"><?php echo $item['Id']; ?></td>
+							<td class="campos"><?php echo $item['descricao']; ?></td>
+							<td class="campos"><?php echo $item['classificacao_indicativa']; ?></td>
+							<td>
+								<button class="btn">
+									<a href="../Alterar/alterar_Categoria.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
+								</button>	
+							</td>
+							<td>
+								<button class="btn">
+									<a href="../Excluir/excluir_Categoria.php?Id=<?php echo $item['Id']; ?>">Excluir</a>
+								</button>								
+							</td>
+						</tr>
+				<?php
+					}
 				}
-			}
-			?>
-		</tbody>
-	</table>
-	Exitem <?php echo mysqli_num_rows($query); ?> Itens
+				?>
+			</tbody>
+		</table>
+		Exitem <?php echo mysqli_num_rows($query); ?> Itens
+	<div id="lista">
 </body>
 
 </html>

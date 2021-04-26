@@ -1,4 +1,4 @@
-#menu-h{
+#menu-h {
     background-color: rgb(37, 37, 39);
 }
 
@@ -13,62 +13,83 @@
 }
 
 #menu-h ul li a {
-    color: #FFF;
+    color: #fff;
     padding: 20px;
     display: inline-block;
     text-decoration: none;
-    
 }
 
 #menu-h ul li a:hover {
     background-color: rgb(24, 139, 233);
 }
 
-#atalho{
-    padding:20px;
-    height:150px;
+#atalho {
+    padding: 20px;
+    height: 150px;
     background-color: #f2f1f0;
 }
 
-#filtro	{		
-    height:30px;
+.filtro {
+    height: 30px;
     background-color: #e3e6e3;
-    margin-top:5px;
-    padding:20px;
-    
+    margin-top: 5px;
+    padding: 20px;
+    top: 50%;
+    width: 100%;
+    padding: 0 20px;
+    padding-top: 5px;
 }
 
-.busca{
-    width:300px;
+.busca {
+    width: 300px;
 }
 
-.button_pesquisar{
-    margin-left:600px;
-    width:400px;
+.button_pesquisar {
+    margin-left: 600px;
+    width: 400px;
 }
 
-.header_list{
-    background:#e3e6e3;
+.header_list {
+    background: #e3e6e3;
 }
 
-.header_list tr th{
-    padding-top:5px;
-    padding-bottom:5px;
-    padding-left:50px;
-    padding-right:50px;
+.texto{
+    text-align: justify;
 }
 
-.body_list{
-    background:#f2f1f0;
+.campos{
+    text-align: center;
 }
 
-.body_list tr td{
-    padding-top:10px;
-    padding-bottom:10px;
-
+.header_list tr th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
-button a{
+
+.body_list {
+    background: #f2f1f0;
+}
+
+.body_list tr td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+button a {
     color: black;
     display: inline-block;
     text-decoration: none;
+}
+
+.btn {
+    border-bottom: 2px solid #c5ecfd;
+    width: 100%;
+    background: #f2f1f0;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: capitalize;
 }
