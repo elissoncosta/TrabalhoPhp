@@ -7,12 +7,25 @@ include('../../conexao.php');
 <head>
 	<title>Listar Clientes</title>
 	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../../Styles/Listar.css">
 </head>
 
 <body>
-	<?php
-	include('../../menu.php');
-	?>
+
+	<nav id="menu-h">
+		<?php
+		include('../../menu.php');
+		?>
+	</nav>
+
+	<div id="atalho"></div>
+
+	<div id="filtro" class="filtro">
+		<button type="button"><a href="../Cadastrar/cadastrar_clientes.php">Cadastrar Novo Cliente</a></button>
+		<input class="button_pesquisar" type="search" class="busca">
+		<button type="button">Buscar</button>		
+	</div>
+
 	<?php
 	$ok   = @$_GET['ok'];
 	$erro = @$_GET['erro'];
@@ -29,9 +42,10 @@ include('../../conexao.php');
 		echo "<p class=\"erro\">Cliente não excluído! MySQL erro: {$msg}</p>";
 	}
 	?>
-	<br><br><a href="../Cadastrar/cadastrar_clientes.php">Cadastrar</a><br><br>
+
+	<div id="lista">
 	<table>
-		<thead>
+		<thead class="header_list">
 			<tr>
 				<th>Código</th>
 				<th>Nome</th>
@@ -40,10 +54,10 @@ include('../../conexao.php');
 				<th>Sexo</th>
 				<th>Enredeço</th>
 				<th>Numero Endereço</th>
-				<th>Ações</th>
+				<th colspan="2">Ações</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="body_list">
 			<?php
 			$sql = "SELECT ID_CLIENTE AS Id,
                            nome,
@@ -74,8 +88,14 @@ include('../../conexao.php');
 						<td><?php echo $item['endereco']; ?></td>
 						<td><?php echo $item['numero_endereco']; ?></td>
 						<td>
-							<a href="../Alterar/alterar_clientes.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
-							<a href="../Excluir/excluir_clientes.php?Id=<?php echo $item['Id']; ?>">Excluir</a>
+							<button class="btn" type="button">
+								<a href="../Alterar/alterar_clientes.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
+							</button>
+						</td>
+						<td>
+							<button class="btn" type="button">
+								<a href="../Excluir/excluir_clientes.php?Id=<?php echo $item['Id']; ?>">Excluir</a>
+							</button>								
 						</td>
 					</tr>
 			<?php
@@ -85,6 +105,7 @@ include('../../conexao.php');
 		</tbody>
 	</table>
 	Exitem <?php echo mysqli_num_rows($query); ?> Itens
+	</div>
 </body>
 
 </html>
