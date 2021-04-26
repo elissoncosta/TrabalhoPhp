@@ -1,6 +1,5 @@
-p.sucesso {
-	color: green;
-}
-p.erro {
-	color: red;
+body{
+    background: url(../Images/Biblioteca.jpg) no-repeat top center;
+    background-size: cover;
+    height: 100vh;    
 }

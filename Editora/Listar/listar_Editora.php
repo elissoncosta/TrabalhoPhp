@@ -6,7 +6,7 @@ include('../../conexao.php');
 
 <head>
 	<title>Listar Editora</title>
-	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../../Styles/site.css">
 	<link rel="stylesheet" type="text/css" href="../../Styles/Listar.css">
 </head>
 
@@ -17,12 +17,15 @@ include('../../conexao.php');
 		?>
 	</nav>
 
-	<div id="atalho"></div>
-
 	<div id="filtro" class="filtro">
-		<button type="button"><a href="../Cadastrar/cadastrar_Editora.php">Cadastrar Nova Editora</a></button>
-		<input class="button_pesquisar" type="search" class="busca">
-		<button type="button">Buscar</button>		
+		<button class="btn1" type="button">
+			<a href="../Cadastrar/cadastrar_Categoria.php">Cadastrar Nova Categoria</a>
+		</button>
+		<input class="pesquisar" 
+		       type="search" 
+		       class="busca" 
+		       placeholder="Pesquisa..." >
+		<button class="btn1" type="button">Buscar</button>		
 	</div>
 
 	<?php
@@ -107,7 +110,9 @@ include('../../conexao.php');
 			</div>
 		</tbody>
 	</table>
-	Exitem <?php echo mysqli_num_rows($query); ?> Itens
+	<p>
+		Exitem <?php echo mysqli_num_rows($query); ?> Itens
+	</p>
 </body>
 
 </html>

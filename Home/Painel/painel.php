@@ -3,7 +3,7 @@
 
 <head>
 	<title>Biblioteca</title>
-	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../../Styles/site.css">
 	<link rel="stylesheet" type="text/css" href="../../Styles/Listar.css">
 </head>
 
