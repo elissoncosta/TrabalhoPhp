@@ -4,12 +4,15 @@
 <head>
 	<title>Excluir Locação</title>
 	<link rel="stylesheet" type="text/css" href="../../Styles/Excluir.css">
+	<link rel="stylesheet" type="text/css" href="../../Styles/Listar.css">
 </head>
 
 <body>
-	<?php
-	include('../../menu.php');
-	?>
+	<nav id="menu-h">
+		<?php
+		include('../../menu.php');
+		?>
+	</nav>
 	<div class="wrapper">
 		<div class="campos">
 			<form action="excluir_locacoes_db.php" method="post">
