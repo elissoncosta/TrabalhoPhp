@@ -1,4 +1,8 @@
-#menu-h {
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#menu-h{
     background-color: rgb(37, 37, 39);
 }
 
@@ -13,7 +17,7 @@
 }
 
 #menu-h ul li a {
-    color: #fff;
+    color: #FFF;
     padding: 20px;
     display: inline-block;
     text-decoration: none;
@@ -23,73 +27,51 @@
     background-color: rgb(24, 139, 233);
 }
 
-#atalho {
-    padding: 20px;
-    height: 150px;
+#atalho{
+    padding:20px;
+    height:150px;
     background-color: #f2f1f0;
 }
 
-.filtro {
-    height: 30px;
+#filtro	{		
+    height:30px;
     background-color: #e3e6e3;
-    margin-top: 5px;
-    padding: 20px;
-    top: 50%;
-    width: 100%;
-    padding: 0 20px;
-    padding-top: 5px;
+    margin-top:5px;
+    padding:20px;
+    
 }
 
-.busca {
-    width: 300px;
+.busca{
+    width:300px;
 }
 
-.button_pesquisar {
-    margin-left: 600px;
-    width: 400px;
+.button_pesquisar{
+    margin-left:600px;
+    width:400px;
 }
 
-.header_list {
-    background: #e3e6e3;
+.header_list{
+    background:#e3e6e3;
 }
 
-.texto{
-    text-align: justify;
+.header_list tr th{
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:50px;
+    padding-right:50px;
 }
 
-.campos{
-    text-align: center;
+.body_list{
+    background:#f2f1f0;
 }
 
-.header_list tr th {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
+.body_list tr td{
+    padding-top:10px;
+    padding-bottom:10px;
 
-.body_list {
-    background: #f2f1f0;
 }
-
-.body_list tr td {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-button a {
+button a{
     color: black;
     display: inline-block;
     text-decoration: none;
-}
-
-.btn {
-    border-bottom: 2px solid #c5ecfd;
-    width: 100%;
-    background: #f2f1f0;
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    text-transform: capitalize;
 }

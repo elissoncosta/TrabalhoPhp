@@ -7,12 +7,15 @@ include('../../conexao.php');
 <head>
 	<title>Alterar Titulos</title>
 	<link rel="stylesheet" type="text/css" href="../Styles/site.css">
+	<link rel="stylesheet" type="text/css" href="../../Styles/Listar.css">
 </head>
 
 <body>
-	<?php
-	include('../../menu.php');
-	?>
+	<nav id="menu-h">
+		<?php
+			include('../../menu.php');
+		?>
+	</nav>
 	<?php
 	$erro = @$_GET['erro'];
 	$msg  = @$_GET['msg'];
@@ -41,28 +44,17 @@ include('../../conexao.php');
 		?>
 		<input type="hidden" name="Id" value="<?php echo $dado['Id']; ?>">
 
-		<label for="Id">Código</label><br>
-		<input type="text" 
-		       name="Id" 
-			   id="Id" 
-			   maxlength="11" 
-			   value="<?php echo $Id; ?>" disabled="true"><br><br>
+		<label for="Id">Código:</label>
+		<input type="text" name="Id" id="Id" maxlength="11" value="<?php echo $Id; ?>" disabled="true"><br><br>
 
-		<label for="titulo">Título</label><br>
-		<input type="text" 
-		       name="titulo" 
-			   id="titulo" 
-			   maxlength="150" 
-			   value="<?php echo $dado['titulo']; ?>"><br><br>
+		<label for="titulo">Título:</label>
+		<input type="text" name="titulo" id="titulo" maxlength="150" value="<?php echo $dado['titulo']; ?>"><br><br>
 
-		<label for="sinopse">Sinopse</label><br>
-		<textarea name="sinopse" 
-		          id="sinopse" 
-				  cols="40" 
-				  rows="5"value="<?php echo $dado['sinopse']; ?>"></textarea>
+		<label for="sinopse">Sinopse:</label>
+		<textarea name="sinopse" id="sinopse" cols="40"  rows="5"value="<?php echo $dado['sinopse']; ?>"></textarea>
 		<br><br>
 
-		<label for="IdEditora">Item</label><br>
+		<label for="IdEditora">Item:</label>
 		<select name="IdEditora" id="IdEditora">
 			<?php
 			$sql = "SELECT ID_EDITORA as IdEditora, razao_social FROM EDITORA";
@@ -79,7 +71,7 @@ include('../../conexao.php');
 			?>
 		</select><br><br>
 
-		<label for="IdCategoria">Categoria</label><br>
+		<label for="IdCategoria">Categoria:</label>
 		<select name="IdCategoria" id="IdCategoria">
 			<?php
 			$sql = "SELECT id_categoria as IdCategoria, descricao FROM categoria";
@@ -95,7 +87,7 @@ include('../../conexao.php');
 			?>
 		</select><br><br>	
 
-		<label for="tipo">Tipo Titulo</label><br>
+		<label for="tipo">Tipo Titulo:</label>
 		<select name="tipo" id="tipo">
 			<option value="Livro" <?php if ($dado['tipo'] == 'Livro') { ?>selected="selected" <?php } ?>>Livro</option>
 			<option value="Revista" <?php if ($dado['tipo'] == 'Revista') { ?>selected="selected" <?php } ?>>Revista</option>
@@ -103,7 +95,7 @@ include('../../conexao.php');
 			<option value="Gibi" <?php if ($dado['tipo'] == 'Gibi') { ?>selected="selected" <?php } ?>>Gibi</option>
 		</select><br><br>
 
-		<label for="classificacao">Classificação Indicativa</label><br>
+		<label for="classificacao">Classificação Indicativa:</label>
 		<select name="classificacao" id="classificacao">
 			<option value="1" <?php if ($dado['classificacao'] == '1') { ?>selected="selected" <?php } ?>>Livre</option>
 			<option value="2" <?php if ($dado['classificacao'] == '2') { ?>selected="selected" <?php } ?>>10 Anos</option>

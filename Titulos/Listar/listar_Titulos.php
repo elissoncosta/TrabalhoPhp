@@ -11,9 +11,13 @@ include('../../conexao.php');
 	</head>
 
 	<body>
-		<?php
+		<nav id="menu-h">
+			<?php
 			include('../../menu.php');
-		?>
+			?>
+		</nav>
+
+		<div id="atalho"></div>
 
 		<div id="filtro" class="filtro">
 			<button type="button"><a href="../Cadastrar/cadastrar_Titulo.php">Cadastrar Novo Titulo</a></button>
