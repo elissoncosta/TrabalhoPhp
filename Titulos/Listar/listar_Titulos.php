@@ -20,7 +20,7 @@ include('../../conexao.php');
 
 		<div id="filtro" class="filtro">
 			<button class="btn1" type="button">
-				<a href="../Cadastrar/cadastrar_Categoria.php">Cadastrar Nova Categoria</a>
+				<a href="../Cadastrar/cadastrar_Titulo.php">Cadastrar Novo Título</a>
 			</button>
 			<input class="pesquisar" 
 		       type="search" 
