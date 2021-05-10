@@ -87,7 +87,16 @@ include('../../conexao.php');
 						<td><?php echo $item['nome']; ?></td>
 						<td><?php echo $item['cpf']; ?></td>
 						<td><?php echo $item['celular']; ?></td>
-						<td><?php echo $item['sexo']; ?></td>
+						<td class="campos"><?php switch ($item['sexo']) {
+													case 1:; ?> Femnino
+									<?php
+														break;
+													case 2:; ?> Masculino
+									<?php
+														break;
+													case 3:; ?> Outros
+								<?php } ?>
+							</td>
 						<td><?php echo $item['endereco']; ?></td>
 						<td><?php echo $item['numero_endereco']; ?></td>
 						<td>

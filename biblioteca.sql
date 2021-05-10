@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Abr-2021 às 00:58
+-- Tempo de geração: 27-Abr-2021 às 02:22
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 8.0.2
 
@@ -38,11 +38,12 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `descricao`, `classificacao_indicativa`) VALUES
-(1, 'FANTASIA', 121),
-(2, 'AVENTURA', 12),
-(3, 'SUSPENSE', 14),
-(4, 'TERROR', 16),
-(5, 'ADULTO', 18);
+(1, 'FANTASIA', 2),
+(2, 'AVENTURA', 3),
+(3, 'SUSPENSE', 4),
+(4, 'TERROR', 5),
+(5, 'ADULTO', 5),
+(11, '13132', 1);
 
 -- --------------------------------------------------------
 
@@ -65,8 +66,8 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nome`, `cpf`, `celular`, `sexo`, `endereco`, `numero_endereco`) VALUES
-(1, 'Gustavo Fc', '085.848.589-37', '(48) 99672-6053', 'M', 'TEsteea', '123'),
-(2, 'ARNOLD schwarzenegger  ', '14412312311', '99994422', 'M', 'AVENIDA DO FUTURO', '1000');
+(1, 'Gustavo Fc', '085.848.589-37', '(48) 99672-6053', '2', 'TEsteea', '123'),
+(2, 'ARNOLD schwarzenegger  ', '14412312311', '99994422', '3', 'AVENIDA DO FUTURO', '1000');
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ CREATE TABLE `editora` (
 --
 
 INSERT INTO `editora` (`id_editora`, `razao_social`, `telefone`, `endereco`, `numero_endereco`, `complemento`, `cep`, `email`) VALUES
-(1, 'PLAYBOY1', '11', '33444441', 11, '331', '88', '1'),
+(1, 'PLAYBOY1', '11', '33444441', 11, '3311', '88', 'gusta'),
 (2, 'SARAIVA', 'SARAIVA LTDA', '3344444', 0, '77', '', '');
 
 -- --------------------------------------------------------
@@ -111,9 +112,9 @@ CREATE TABLE `item_locacao` (
 --
 
 INSERT INTO `item_locacao` (`id_item_locacao`, `sequence`, `locacao_id`, `titulo_id`) VALUES
-(1, 1, 2, 3),
-(3, 2, 1, 2),
-(2, 3, 1, 1);
+(1, 1, 1, 3),
+(2, 3, 1, 1),
+(3, 2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,7 @@ CREATE TABLE `titulos` (
   `titulo` varchar(150) NOT NULL,
   `sinopse` varchar(150) NOT NULL,
   `classificacao` char(10) DEFAULT NULL,
-  `tipo` char(10) DEFAULT NULL,
+  `tipo` char(20) DEFAULT NULL,
   `categoria_id` int(11) NOT NULL,
   `editora_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -158,10 +159,10 @@ CREATE TABLE `titulos` (
 --
 
 INSERT INTO `titulos` (`id_titulo`, `titulo`, `sinopse`, `classificacao`, `tipo`, `categoria_id`, `editora_id`) VALUES
-(1, 'harry potter e o enigma do NARDO', 'qualquer coisa que vier na mente', '0', '12', 1, 2),
-(2, 'Revista Playboy 2021', '', '0', '18', 5, 1),
-(3, 'HQ TURMA DA MONICA', 'HQ LIXO', '0', '0', 3, 1),
-(4, 'Programando em PROGRESS', '', '0', '12', 1, 2);
+(1, 'harry potter e o enigma do NARDO', '1', '1', 'Livro', 1, 2),
+(2, 'Revista Playboy 2021', '', '2', 'Revista', 5, 1),
+(3, 'HQ TURMA DA MONICA', '', '3', 'Gibi', 3, 1),
+(4, 'Programando em PROGRESS', '', '4', 'Livro', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -238,48 +239,41 @@ ALTER TABLE `titulos`
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `editora`
 --
 ALTER TABLE `editora`
-  MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_editora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `item_locacao`
 --
 ALTER TABLE `item_locacao`
-  MODIFY `id_item_locacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_item_locacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `locacao`
 --
 ALTER TABLE `locacao`
-  MODIFY `id_locacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_locacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `titulos`
 --
 ALTER TABLE `titulos`
-  MODIFY `id_titulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_titulo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restrições para despejos de tabelas
 --
-
---
--- Limitadores para a tabela `item_locacao`
---
-ALTER TABLE `item_locacao`
-  ADD CONSTRAINT `fk_item_locacao_locacao` FOREIGN KEY (`locacao_id`) REFERENCES `locacao` (`id_locacao`),
-  ADD CONSTRAINT `fk_item_locacao_titulo` FOREIGN KEY (`titulo_id`) REFERENCES `titulos` (`id_titulo`);
 
 --
 -- Limitadores para a tabela `locacao`
