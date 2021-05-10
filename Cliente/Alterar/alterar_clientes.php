@@ -80,13 +80,12 @@ include('../../conexao.php');
 						value="<?php echo $item['celular']; ?>">
 					<br><br>
 
-					<label for="sexo">Sexo</label><br>
-					<input type="text" 
-						name="sexo" 
-						id="sexo" 
-						maxlength="11" 
-						value="<?php echo $item['sexo']; ?>">
-					<br><br>
+					<label for="sexo">Genêro</label><br>
+					<select name="sexo" id="sexo">
+						<option value="1" <?php if ($item['sexo'] == '1') { ?>selected="selected" <?php } ?> >Feminino</option>
+						<option value="2" <?php if ($item['sexo'] == '2') { ?>selected="selected" <?php } ?> >Masculino</option>
+						<option value="3" <?php if ($item['sexo'] == '3') { ?>selected="selected" <?php } ?> >Outros</option>
+					</select><br><br>
 
 					<label for="endereco">Endereço</label><br>
 					<input type="text" 

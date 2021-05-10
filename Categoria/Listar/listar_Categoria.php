@@ -59,7 +59,7 @@ include('../../conexao.php');
 				<?php
 				$sql = "SELECT ID_CATEGORIA AS Id,
 							descricao,
-							classificacao_indicativa 
+							classificacao_indicativa as classificacao
 						FROM CATEGORIA
 						ORDER BY ID_CATEGORIA";
 
@@ -76,7 +76,22 @@ include('../../conexao.php');
 						<tr>
 							<td class="campos"><?php echo $item['Id']; ?></td>
 							<td class="campos"><?php echo $item['descricao']; ?></td>
-							<td class="campos"><?php echo $item['classificacao_indicativa']; ?></td>
+							<td class="campos"><?php switch ($item['classificacao']) {
+													case 1:; ?> Livre
+									<?php
+														break;
+													case 2:; ?> 10 Anos
+									<?php
+														break;
+													case 3:; ?> 12 Anos
+									<?php
+														break;
+													case 4:; ?> 16 Anos
+									<?php
+														break;
+													case 5:; ?> 18 Anos
+								<?php } ?>
+							</td>
 							<td>
 								<button class="btn">
 									<a href="../Alterar/alterar_Categoria.php?Id=<?php echo $item['Id']; ?>">Alterar</a>
