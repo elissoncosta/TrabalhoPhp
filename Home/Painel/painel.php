@@ -1,3 +1,6 @@
+<?php
+include('../../validar.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
