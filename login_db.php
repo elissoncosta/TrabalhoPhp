@@ -6,7 +6,6 @@ include('./conexao.php');
 $user = $_POST['user'];
 $senha = md5($_POST['senha']);
 
-// $sql = "SELECT * FROM USUARIO WHERE user = '{$user}' AND senha = '{$senha}'";
 $sql = "SELECT * FROM usuario WHERE user = '{$user}' AND senha = MD5('{$senha}')";
 
 $query = mysqli_query($conexao, $sql);

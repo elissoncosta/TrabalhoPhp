@@ -3,14 +3,14 @@ body {
     padding: 0;
     background: url(../Images/Biblioteca.jpg) no-repeat top center;
     background-size: cover;
-    height: 100vh;    
+    height: 100vh;
     background-position: center;
     font-family: sans-serif;
 }
 
 .loginBox {
     width: 320px;
-    height: 370px;
+    height: 400px;
     background: #000;
     color: #fff;
     top: 50%;
@@ -37,6 +37,17 @@ h1 {
     font-size: 22px;
 }
 
+a {
+    margin: 0;
+    padding: 0 0 20 px;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    margin-left: 50px;
+}
+
 .loginBox p {
     margin: 0;
     padding: 0;
@@ -48,30 +59,31 @@ h1 {
     margin-bottom: 20px;
 }
 
-.loginBox input[type='text'],input[type='password'] {
+.loginBox input[type='text'],
+input[type='password'] {
     border: none;
-	border-bottom: 1px solid #fff ;
-	background: transparent;
-	outline: none;
-	height: 40px;
-	color: #fff;
-	font-size: 16px;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
 }
 
-.loginBox button{
-	border: none;
-	outline: none;
-	height: 40px;
-	background: #fb2525;
-	color: #fff;
-	font-size: 18px;
-	border-radius: 20px;
+.loginBox button {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
     width: 100%;
     margin-bottom: 20px;
 }
 
 .loginBox button:hover {
-	cursor: pointer;
-	background: #ffc107;
-	color: #000;
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
 }
