@@ -35,6 +35,10 @@
 
 			<button type="submit">Login</button>
 
+			<a href="./Usuario/Alterar/alterar_usuarios.php">Esqueci minha senha</a>
+			<br>
+			<a href="./Usuario/Cadastrar/cadastrar_usuarios.php">Registre-se</a>
+
 		</form>
 
 	</div>
