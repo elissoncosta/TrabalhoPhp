@@ -31,6 +31,7 @@
 			<input type="text" name="user" id="user" maxlength="20" placeholder="Digite seu usuário"><br><br>
 			
 
+
 			<p>Senha</p>
 			<input type="password" name="senha" id="senha" maxlength="20" placeholder="Insira sua senha"><br><br>
 
